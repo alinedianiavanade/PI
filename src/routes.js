@@ -1,10 +1,8 @@
 import { Router } from 'express';
-/*import UserController from './app/controllers/UserController';*/
-/*import SessionController from './app/controllers/SessionController';*/
+import ProdutoController from './app/controllers/ProdutoController';
 
 const routes = new Router();
 
-/*routes.post('/users', UserController.store);
-routes.post('/session',SessionController.store);*/
+routes.post('/produto', ProdutoController.store);
 
 export default routes;
