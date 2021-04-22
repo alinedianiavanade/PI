@@ -2,7 +2,7 @@
 # Desse vocês criam uma migrations pra cada tabela pra implementar no db.
 
                               #Eu fiz os comandos :
-                        #####################################
+                        
 * npm init -y
 * npm install express
 * npm install --save-dev sucrase
