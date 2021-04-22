@@ -1,7 +1,7 @@
 # Eu fiz exemplos com o meu arquivo favoritos.
-# Desse vocês cria uma migrations pra cada tabela pra implementar no db.
+# Desse vocês criam uma migrations pra cada tabela pra implementar no db.
 
-                              #Eu so fiz os comando :
+                              #Eu fiz os comandos :
                         #####################################
 * npm init -y
 * npm install express
