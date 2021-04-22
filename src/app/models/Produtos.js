@@ -1,4 +1,4 @@
-import {Sequelize, Model} from 'sequelize';
+import Sequelize, { Model } from 'sequelize';
 
 class Produto extends Model {
     static init(sequelize) {
@@ -10,7 +10,7 @@ class Produto extends Model {
             //idCategoria: Sequelize.INTEGER
         }, {
             sequelize,
-        })
+        });
     }
 }
 

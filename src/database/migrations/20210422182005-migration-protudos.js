@@ -4,24 +4,26 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('produtos', { 
       id: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
-        primaryKey: true
+        primaryKey: true,
         },
       nome: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
       quantidade: {
         type: Sequelize.STRING,
+        allowNull: true,
       },
       descricao: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: true,
       },
       preco: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
       },
       /*
       idCategoria: {
