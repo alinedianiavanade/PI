@@ -1,6 +1,7 @@
 import {Sequelize} from 'sequelize';
-import {databaseConfig} from '../config/database';
 import Produto from '../app/models/Produtos';
+import databaseConfig from '../config/database';
+
 
 const models = [Produto];
 
