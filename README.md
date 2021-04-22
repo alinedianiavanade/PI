@@ -10,3 +10,4 @@
 * npm install sequelize
 * npm install sequelize-cli -D
 * npm install --save mysql2
+###%%
