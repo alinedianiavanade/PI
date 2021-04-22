@@ -6,11 +6,17 @@ class Produto extends Model {
             nome: Sequelize.STRING,
             quantidade: Sequelize.STRING,
             descricao: Sequelize.STRING,
-            preco: Sequelize.STRING,
-            //idCategoria: Sequelize.INTEGER
+            preco: Sequelize.DECIMAL(7,2),
+            idCategoria: Sequelize.INTEGER
         }, {
             sequelize,
+            modelName: 'produtos'
         });
+
+        Produto.associate = function(models){
+            Produto.belongsTo(models.Categoria, {foreignKey: 'idCategoria', as: 'catProduto'})
+        };
+
     }
 }
 
