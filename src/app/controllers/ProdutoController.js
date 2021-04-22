@@ -6,6 +6,34 @@ class ProdutoController {
 
         return response.json(produto)
     }
+
+    async show(request, response) {
+        const produtos = await Produto.findAll();
+        
+        return response.json(produtos)
+    };
+
+    async showNome(request, response) {
+        const produto = await Produto.findAll({where: {nome: request.body.nome}})
+
+        return response.json(produto)
+    }
+
+    async delete(request, response) {
+        const {id} = request.params;
+        Produto.destroy({where:{id: id}});
+        if(data=>data){
+            return response.json({message:"Produto apagado."})
+        }
+    }
+    
+    async update(request, response) {
+        const {id} = request.params
+        const produto = await Produto.findByPk(id);
+        const produtoFinal =  await produto.update(request.body);
+
+        return response.json(produtoFinal)
+    }
 }
 
 export default new ProdutoController();

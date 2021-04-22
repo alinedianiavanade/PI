@@ -14,27 +14,25 @@ module.exports = {
         allowNull: false,
       },
       quantidade: {
-        type: Sequelize.STRING,
+        type: Sequelize.SMALLINT,
         allowNull: true,
       },
       descricao: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: true,
       },
       preco: {
-        type: Sequelize.STRING,
+        type: Sequelize.DECIMAL(7,2),
         allowNull: false,
       },
-      /*
       idCategoria: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        reference: {
-          model: 'Categorias',
-          key: 'idCategorias'
+        references: {
+          model: 'categorias',
+          key: 'idCategoria'
         }
-      }
-      */
+        },
       created_at: {
         type: Sequelize.STRING,
         allowNull: false,
