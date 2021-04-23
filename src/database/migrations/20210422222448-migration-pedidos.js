@@ -19,9 +19,9 @@ module.exports = {
       },
       status: {
         type: Sequelize.BOOLEAN,
-        allowNull: true,
+        allowNull: false,
       },
-      valorTotal: {
+      valor_total: {
         type: Sequelize.STRING,
         allowNull: false,
       },
