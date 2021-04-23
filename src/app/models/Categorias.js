@@ -3,8 +3,13 @@ import Sequelize, { Model } from 'sequelize';
 class Categoria extends Model {
     static init(sequelize) {
         super.init({
-            idCategoria: Sequelize.INTEGER,
-            nome: Sequelize.STRING,
+            id_categoria: {
+                type: Sequelize.INTEGER,
+                allowNull: false,
+                autoIncrement: true,
+                primaryKey: true,
+                },
+            categoria: Sequelize.STRING,
         }, {
             sequelize,
             modelName: 'categorias'

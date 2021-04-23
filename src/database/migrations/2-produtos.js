@@ -26,12 +26,12 @@ module.exports = {
         allowNull: false,
       },
       
-      idCategoria: {
+      id_categoria: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
           model: 'categorias',
-          key: 'idCategoria'
+          key: 'id_categoria'
         }
         },
       

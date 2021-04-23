@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('categorias', { 
-      idCategoria: {
+      id_categoria: {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
