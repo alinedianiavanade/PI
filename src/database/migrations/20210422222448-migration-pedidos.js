@@ -9,14 +9,6 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
         },
-      pedido: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      data: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
       status: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
@@ -25,14 +17,14 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      /*id_cliente: {
+      id_cliente: {
         type: Sequelize.INTEGER,
         allowNull: false,
         reference: {
-          model: 'Categorias',
-          key: 'idCategorias'
+          model: 'Clientes',
+          key: 'id'
         }
-      },*/
+      },
       created_at: {
         type: Sequelize.STRING,
         allowNull: false,
