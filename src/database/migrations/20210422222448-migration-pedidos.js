@@ -14,13 +14,13 @@ module.exports = {
         allowNull: false,
       },
       valor_total: {
-        type: Sequelize.STRING,
+        type: Sequelize.DECIMAl(7,2),
         allowNull: false,
       },
       id_cliente: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        reference: {
+        references: {
           model: 'Clientes',
           key: 'id'
         }
