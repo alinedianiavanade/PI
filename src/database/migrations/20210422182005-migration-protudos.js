@@ -25,12 +25,12 @@ module.exports = {
         type: Sequelize.DECIMAL(7,2),
         allowNull: false,
       },
-      idCategoria: {
+      id_categoria: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
           model: 'categorias',
-          key: 'idCategoria'
+          key: 'id_categoria'
         }
         },
       created_at: {
