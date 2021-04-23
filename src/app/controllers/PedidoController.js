@@ -2,10 +2,20 @@ import Pedido from '../models/Pedidos';
 
 class PedidoController {
     async store(request, response) {
-        const pedido = await Pedido.create(request.body);
+        const catExists = await Pedido.findOne( { where: { pedido: request.body.pedido } } );
 
-        return response.json(pedido)
-    }
+        if (catExists) {
+            return response.status(400).json({ error: "Pedido já cadastrado"});
+        };
+        
+        const {id, pedido} = await Pedido.create(request.body);
+
+
+        return response.json({
+            id,
+            pedido,
+        });
+    };   
     async show(request, response) {
         const pedidos = await Pedido.findAll();
 
