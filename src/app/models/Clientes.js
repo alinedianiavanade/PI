@@ -3,7 +3,6 @@ import Sequelize, { Model } from 'sequelize';
 class Cliente extends Model {
     static init(sequelize) {
         super.init ({
-            id_cliente: Sequelize.SMALLINT,
             nome: Sequelize.STRING,
             email: Sequelize.STRING,
             password: Sequelize.STRING,
