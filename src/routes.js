@@ -8,5 +8,6 @@ routes.get('/produtos', ProdutoController.show);
 routes.get('/produto', ProdutoController.showNome);
 routes.delete('/produto/:id', ProdutoController.delete);
 routes.put('/produto/:id', ProdutoController.update);
+routes.get('/produtos-na-categoria/:id', ProdutoController.showByCategory);
 
 export default routes;
