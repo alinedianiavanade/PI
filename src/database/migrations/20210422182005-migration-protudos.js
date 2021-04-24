@@ -25,6 +25,7 @@ module.exports = {
         type: Sequelize.DECIMAL(7,2),
         allowNull: false,
       },
+      /*
       idCategoria: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -33,6 +34,7 @@ module.exports = {
           key: 'idCategoria'
         }
         },
+        */
       created_at: {
         type: Sequelize.STRING,
         allowNull: false,
