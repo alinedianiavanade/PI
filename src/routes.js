@@ -4,6 +4,11 @@ import ClientesController from './app/controllers/ClientesController';
 import PedidoController from './app/controllers/PedidoController';
 import CategoriaController from './app/controllers/CategoriaController';
 
+import PedidoController from './app/controllers/PedidoController';
+
+import CategoriaController from './app/controllers/CategoriaController';
+
+
 const routes = new Router();
 
 routes.post('/clientes', ClientesController.store);
