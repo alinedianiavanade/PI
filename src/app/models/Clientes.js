@@ -16,6 +16,8 @@ class Cliente extends Model {
             sequelize,
         modelName:'Clientes',
         });
+        Cliente.associate = function(models) {
+            Cliente.hasMany(models.Pedido, {as: 'pedidos'});
     }
 }
 
