@@ -1,5 +1,8 @@
 import { Router } from 'express';
 import ProdutoController from './app/controllers/ProdutoController';
+import ClientesController from './app/controllers/ClientesController';
+import PedidoController from './app/controllers/PedidoController';
+import CategoriaController from './app/controllers/CategoriaController';
 
 import PedidoController from './app/controllers/PedidoController';
 
@@ -7,6 +10,12 @@ import CategoriaController from './app/controllers/CategoriaController';
 
 
 const routes = new Router();
+
+routes.post('/clientes', ClientesController.store);
+routes.put('/clientes/:id', ClientesController.update);
+routes.delete('/clientes/:id', ClientesController.delete);
+routes.get('/clientes', ClientesController.show);
+routes.get('/clientes/:id', ClientesController.showClienteId);
 
 routes.post('/produto', ProdutoController.store);
 routes.get('/produtos-na-categoria/:id', ProdutoController.showByCategory);

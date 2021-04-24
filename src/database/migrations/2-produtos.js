@@ -50,3 +50,6 @@ module.exports = {
      queryInterface.dropTable('produtos');
   }
 };
+
+
+
