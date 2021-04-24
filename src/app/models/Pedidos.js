@@ -8,7 +8,11 @@ class Pedido extends Model {
             id_cliente: Sequelize.INTEGER
         }, {
             sequelize,
+            modelName: 'Pedidos'
         });
+        Pedido.associate = function(models){
+            Pedido.belongsTo(models.Cliente, {foreignKey: 'id', as: 'pedcliente'})
+        }
     }
 }
 
