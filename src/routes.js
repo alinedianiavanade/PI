@@ -11,6 +11,7 @@ routes.get('/pedidos', PedidoController.show);
 routes.delete('/pedidos/:id', PedidoController.delete);
 routes.put('/pedidos/:id', PedidoController.update);
 routes.get('/busca-pedidos/:id', PedidoController.showPedidoId);
+routes.get('/pedidos-cliente/:id', PedidoController.showPedidoCliente);
 
 
 

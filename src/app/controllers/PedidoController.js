@@ -6,11 +6,12 @@ class PedidoController {
 
         return response.json(pedido)
     };
+
     async show(request, response) {
         const pedidos = await Pedido.findAll();
 
         return response.json(pedidos);
-    };
+    }
     async delete(request, response) {
         const {id} = request.params
         Pedido.destroy({where:{id : id}})
@@ -30,7 +31,7 @@ class PedidoController {
                 message: "Erro interno ao apagar o pedido"
             })
         })
-    };
+    }
     async update(request, response) {
         const {id} = request.params
         const pedExists = await Pedido.findByPk(id);
@@ -54,7 +55,19 @@ class PedidoController {
 
         return response.json(pedido);
     }
+    async showPedidoCliente(request, response) {
+        const {id} = request.params
+        const pedidoExists = await Pedido.findAll({where: {id_cliente : id}});
+
+        if (pedidoExists.length >= 1) {
+            const pedidos = await Pedido.findAll({where: {id_cliente : id}});
+
+            return response.json(pedidos);         
+        };
+        return response.status(400).json({ error: "Cliente não tem pedidos"});
+       
+    }
     
-}
+};
 
 export default new PedidoController();
