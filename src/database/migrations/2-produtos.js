@@ -22,19 +22,19 @@ module.exports = {
         allowNull: true,
       },
       preco: {
-        type: Sequelize.STRING,
+        type: Sequelize.DECIMAL(7,2),
         allowNull: false,
       },
-      /*
-      idCategoria: {
+      
+      id_categoria: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        reference: {
-          model: 'Categorias',
-          key: 'idCategorias'
+        references: {
+          model: 'categorias',
+          key: 'id_categoria'
         }
-      }
-      */
+        },
+      
       created_at: {
         type: Sequelize.STRING,
         allowNull: false,

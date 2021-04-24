@@ -1,9 +1,10 @@
 import {Sequelize} from 'sequelize';
 import Produto from '../app/models/Produtos';
+import Categoria from '../app/models/Categorias';
 import databaseConfig from '../config/database';
 
 
-const models = [Produto];
+const models = [Categoria, Produto];
 
 class Database {
     constructor(){
