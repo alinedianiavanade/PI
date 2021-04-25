@@ -14,7 +14,7 @@ module.exports = {
         allowNull: false,
       },
       quantidade: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         allowNull: true,
       },
       descricao: {
@@ -22,25 +22,25 @@ module.exports = {
         allowNull: true,
       },
       preco: {
-        type: Sequelize.STRING,
+        type: Sequelize.DECIMAL(7,2),
         allowNull: false,
       },
-      /*
-      idCategoria: {
+      
+      id_categoria: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        reference: {
+        references: {
           model: 'Categorias',
-          key: 'idCategorias'
+          key: 'id_categoria'
         }
-      }
-      */
+        },
+      
       created_at: {
-        type: Sequelize.STRING,
+        type: Sequelize.DATE,
         allowNull: false,
       },
       updated_at: {
-        type: Sequelize.STRING,
+        type: Sequelize.DATE,
         allowNull: false,
       },
       });

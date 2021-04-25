@@ -1,9 +1,9 @@
 module.exports = {
 	dialect: 'mysql',
 	host: 'localhost',
-	username: 'byoliveira',
-	password: '158353',
-	database: 'testando',
+	username: 'root',
+	password: '783345',
+	database: 'pi_teste',
 		define: {
 			timestamps: true,    
 			underscored: true,  
