@@ -15,7 +15,7 @@ class Categoria extends Model {
             modelName: 'categorias'
         });
         Categoria.associate = function(models) {
-            Categoria.hasMany(models.Produto, {as: 'produtos'});
+            Categorias.hasMany(models.Produto, {as: 'produtos'});
         }
     }
 }

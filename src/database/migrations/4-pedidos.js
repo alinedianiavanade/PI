@@ -14,7 +14,7 @@ module.exports = {
         allowNull: false,
       },
       valor_total: {
-        type: Sequelize.DECIMAL(7,2),
+        type: Sequelize.DECIMAl(7,2),
         allowNull: false,
       },
       id_cliente: {

@@ -1,4 +1,5 @@
 import {Sequelize} from 'sequelize';
+
 import Produto from '../app/models/Produtos';
 import Categoria from '../app/models/Categorias';
 import Pedido from '../app/models/Pedidos';
@@ -6,7 +7,10 @@ import Cliente from '../app/models/Clientes';
 import Carrinho from '../app/models/Carrinho';
 import databaseConfig from '../config/database';
 
+
+
 const models = [Categoria, Produto, Cliente, Pedido, Carrinho];
+
 
 class Database {
     constructor(){

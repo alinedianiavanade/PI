@@ -18,23 +18,21 @@ module.exports = {
         allowNull: true,
       },
       descricao: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: true,
       },
       preco: {
         type: Sequelize.DECIMAL(7,2),
         allowNull: false,
       },
-      
       id_categoria: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-          model: 'Categorias',
+          model: 'categorias',
           key: 'id_categoria'
         }
         },
-      
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,

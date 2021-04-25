@@ -60,7 +60,9 @@ class PedidoController {
         const pedidoExists = await Pedido.findAll({where: {id_cliente : id}});
 
         if (pedidoExists.length >= 1) {
-            return response.json(pedidoExists);         
+            const pedidos = await Pedido.findAll({where: {id_cliente : id}});
+
+            return response.json(pedidos);         
         };
         return response.status(400).json({ error: "Cliente não tem pedidos"});
        

@@ -11,10 +11,11 @@ class Pedido extends Model {
             modelName: 'Pedidos'
         });
         Pedido.associate = function(models){
-            Pedido.belongsTo(models.Cliente, {foreignKey: 'id', as: 'pedcliente'}),
-            Pedido.hasMany(models.Carrinho, {as: 'carrinho'})
+
+            Pedido.belongsTo(models.Cliente, {foreignKey: 'id', as: 'pedcliente'})
         }
     }
 }
 
 export default Pedido;
+

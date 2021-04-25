@@ -17,9 +17,9 @@ class Cliente extends Model {
         modelName:'Clientes',
         });
         Cliente.associate = function(models) {
-            Cliente.hasMany(models.Pedido, {as: 'pedidos'}),
-            Cliente.hasMany(models.Carrinho, {as: 'carrinho'});
-        }
+
+            Cliente.hasMany(models.Pedido, {as: 'pedidos'});
+
     }
 }
 
