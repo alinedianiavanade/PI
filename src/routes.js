@@ -1,8 +1,9 @@
 import { Router } from 'express';
 import ProdutoController from './app/controllers/ProdutoController';
-import ClientesController from './app/controllers/ClientesController';
-import PedidoController from './app/controllers/PedidoController';
 import CategoriaController from './app/controllers/CategoriaController';
+import PedidoController from './app/controllers/PedidoController';
+import ClientesController from './app/controllers/ClienteController';
+import CarrinhoController from './app/controllers/CarrinhoController';
 
 const routes = new Router();
 
@@ -34,6 +35,11 @@ routes.put('/pedidos/:id', PedidoController.update);
 routes.get('/busca-pedidos/:id', PedidoController.showPedidoId);
 routes.get('/pedidos-cliente/:id', PedidoController.showPedidoCliente);
 
+routes.post('/carrinho', CarrinhoController.store);
+routes.put('/carrinho/:id', CarrinhoController.update);
+routes.delete('/carrinho/:id_carrinho', CarrinhoController.delete);
+routes.get('/carrinho', CarrinhoController.show);
+routes.get('/carrinho/:id_carrinho', CarrinhoController.showCarrinhoId);
 
 
 export default routes;

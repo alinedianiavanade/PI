@@ -2,37 +2,45 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('produtos', { 
-      id: {
+    return queryInterface.createTable('carrinho', { 
+      id_carrinho: {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         },
-      nome: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      quantidade: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-      },
-      descricao: {
-        type: Sequelize.TEXT,
-        allowNull: true,
-      },
-      preco: {
-        type: Sequelize.DECIMAL(7,2),
-        allowNull: false,
-      },
-      id_categoria: {
+      id_produto: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-          model: 'categorias',
-          key: 'id_categoria'
+          model: 'produtos',
+          key: 'id'
         }
-        },
+      },
+      id_pedido: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Pedidos',
+          key: 'id'
+        }
+      },
+      id_cliente: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Clientes',
+          key: 'id'
+        }
+      },
+      quantidade: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      }, 
+      soma_produtos: {
+        type: Sequelize.DECIMAL(10,2),
+        allowNull: false,
+      },
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,
@@ -45,6 +53,6 @@ module.exports = {
   },
 
   down: (queryInterface) => {
-     queryInterface.dropTable('produtos');
+     queryInterface.dropTable('carrinho');
   }
 };
