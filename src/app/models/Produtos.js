@@ -14,8 +14,8 @@ class Produto extends Model {
         });
 
         Produto.associate = function(models){
-            Produto.belongsTo(models.Categoria, {foreignKey: 'id_categoria', as: 'catProduto'}
-        };
+            Produto.belongsTo(models.Categoria, {foreignKey: 'id_categoria', as: 'catProduto'})
+        }
 
     }
 }

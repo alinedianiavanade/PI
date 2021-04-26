@@ -14,12 +14,12 @@ class Cliente extends Model {
 
         } , {
             sequelize,
-        modelName:'Clientes',
+        modelName:'Clientes'
         });
         Cliente.associate = function(models) {
 
             Cliente.hasMany(models.Pedido, {as: 'pedidos'});
-
+        }
     }
 }
 

@@ -2,7 +2,7 @@ import { Router } from 'express';
 import ProdutoController from './app/controllers/ProdutoController';
 import CategoriaController from './app/controllers/CategoriaController';
 import PedidoController from './app/controllers/PedidoController';
-import ClientesController from './app/controllers/ClienteController';
+import ClientesController from './app/controllers/ClientesController';
 import CarrinhoController from './app/controllers/CarrinhoController';
 
 const routes = new Router();
