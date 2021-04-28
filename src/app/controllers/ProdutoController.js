@@ -1,5 +1,6 @@
 import * as Yup from 'yup';
 import Produto from '../models/Produtos';
+import Categoria from '../models/Categorias';
 
 class ProdutoController {
     async store(request, response) {
@@ -7,11 +8,16 @@ class ProdutoController {
             nome: Yup.string().required(),
             quantidade: Yup.number().required(),
             descricao: Yup.string(),
-            preco: Yup.number().required()
+            preco: Yup.number().required(),
+            id_categoria: Yup.number().required()
         })
         if(!(await schema.isValid(request.body))){
             return response.status(401).json({error:'Dados inválidos.'});
         };
+
+        if(!(await Categoria.findOne({where: {id_categoria: request.body.id_categoria}}))) {
+            return response.status(401).json({error: 'Por favor cadastre uma categoria existente'})
+        }
 
         const produtoExiste = await Produto.findOne({where: {nome: request.body.nome}})
 
@@ -67,7 +73,7 @@ class ProdutoController {
         const {id} = request.params
 
         if(!(await Produto.findOne({where: {id_categoria: id}}))) {
-            return response.status(401).json({error: 'Nenhum produto foi encontrado para essa categoria.'})
+            return response.status(401).json({error: 'Nenhum produto foi encontrado para essa categoria ou não existe nenhuma categoria com esse id.'})
         }
         Produto.destroy({where:{id_categoria: id}, truncate: false})
         .then(nums => {
@@ -116,6 +122,10 @@ class ProdutoController {
     }
     async showByCategory(request, response) {
         const produtos = await Produto.findAll({where:{id_categoria : request.params.id}});
+
+        if(!(await Produto.findOne({where:{id_categoria : request.params.id}}))) {
+            return response.status(400).json({ error: "Nenhum produto foi encontrado para essa categoria ou não existe nenhuma categoria com esse id."})
+        };
 
         return response.json(produtos);
     }
