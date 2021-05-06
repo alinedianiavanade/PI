@@ -21,6 +21,10 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: true,
       },
+      assunto: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
       preco: {
         type: Sequelize.DECIMAL(7,2),
         allowNull: false,

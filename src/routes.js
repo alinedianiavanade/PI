@@ -16,6 +16,7 @@ routes.get('/clientes/:id', ClientesController.showClienteId);
 routes.post('/produto', ProdutoController.store);
 routes.get('/produtos', ProdutoController.show);
 routes.get('/produto', ProdutoController.showByName);
+routes.get('/produto-assunto', ProdutoController.showBySubject);
 routes.delete('/produto/:id', ProdutoController.delete);
 routes.delete('/produtos', ProdutoController.deleteAll);
 routes.delete('/produtos-categoria/:id', ProdutoController.deleteAllByCategory);

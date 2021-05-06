@@ -9,6 +9,7 @@ class ProdutoController {
             quantidade: Yup.number().required(),
             descricao: Yup.string(),
             preco: Yup.number().required(),
+            assunto: Yup.string().required(),
             id_categoria: Yup.number().required()
         })
         if(!(await schema.isValid(request.body))){
@@ -41,6 +42,16 @@ class ProdutoController {
 
         if(!(await Produto.findOne({where: {nome: request.body.nome}}))) {
             return response.status(401).json({error:`Nenhum produto de nome ${request.body.body} foi encontrado.`})
+        }
+
+        return response.json(produto)
+    };
+
+    async showBySubject(request, response) {
+        const produto = await Produto.findAll({where: {assunto: request.body.assunto}})
+
+        if(!(await Produto.findOne({where: {assunto: request.body.assunto}}))) {
+            return response.status(401).json({error:`Nenhum produto do assunto ${request.body.assunto} foi encontrado.`})
         }
 
         return response.json(produto)
@@ -90,6 +101,7 @@ class ProdutoController {
             nome: Yup.string(),
             quantidade: Yup.number(),
             descricao: Yup.string(),
+            assunto: Yup.string(),
             preco: Yup.number()
         })
         if(!(await schema.isValid(request.body))){
@@ -120,15 +132,7 @@ class ProdutoController {
 
         return response.json(produtos);
     }
-    async showByCategory(request, response) {
-        const produtos = await Produto.findAll({where:{id_categoria : request.params.id}});
-
-        if(!(await Produto.findOne({where:{id_categoria : request.params.id}}))) {
-            return response.status(400).json({ error: "Nenhum produto foi encontrado para essa categoria ou não existe nenhuma categoria com esse id."})
-        };
-
-        return response.json(produtos);
-    }
+    
 }
 
 export default new ProdutoController();
