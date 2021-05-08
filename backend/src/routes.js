@@ -15,7 +15,8 @@ routes.get('/clientes', ClientesController.show);
 
 routes.post('/produto', ProdutoController.store);
 routes.get('/produtos', ProdutoController.show);
-routes.get('/produto', ProdutoController.showByName);
+routes.get('/produto-nome', ProdutoController.showByName);
+routes.get('/produto/:id', ProdutoController.showProdutoId);
 routes.get('/produto-assunto', ProdutoController.showBySubject);
 routes.delete('/produto/:id', ProdutoController.delete);
 routes.delete('/produtos', ProdutoController.deleteAll);
@@ -36,7 +37,7 @@ routes.get('/carrinho/:id_carrinho', CarrinhoController.showCarrinhoId);
 
 routes.post('/session', SessionController.store);
 
-routes.use(authMiddleware);
+//routes.use(authMiddleware);
 
 routes.put('/clientes', ClientesController.update);
 routes.delete('/clientes', ClientesController.delete);
