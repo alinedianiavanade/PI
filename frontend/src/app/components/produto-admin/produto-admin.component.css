@@ -1,0 +1,16 @@
+.box-content{
+    padding: 110px 30px;
+}
+.busca {
+    display: flex;
+    width: 300px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+}
+.busca button{
+    margin-left: 5px;
+}
+
+button{
+    margin-right: 5px;
+}
