@@ -1,5 +1,6 @@
 import Carrinho from "../models/Carrinho";
 import Pedido from "../models/Pedidos";
+import Produto from "../models/Produtos";
 
 class CarrinhoController {
     async store(request, response) {
@@ -15,6 +16,9 @@ class CarrinhoController {
         var total = 0
         for (var i = 0; i < pedidos.length; i++) {
             total = parseFloat(pedidos[i].soma_produtos) + parseFloat(total)
+            const produto = await Produto.findOne({where:{id: pedidos[i].id_produto}})
+            request.body.quantidade = produto.quantidade - pedidos[i].quantidade
+            await produto.update(request.body)
         }
         
         request.body.valor_total = total
