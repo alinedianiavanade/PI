@@ -26,6 +26,7 @@ class Cliente extends Model {
         Cliente.associate = function(models) {
 
             Cliente.hasMany(models.Pedido, {as: 'pedidos'});
+            Cliente.hasMany(models.Historico, {as: 'Historicos'});
         }
         return this;
     }

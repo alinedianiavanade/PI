@@ -1,6 +1,7 @@
 import Carrinho from "../models/Carrinho";
 import Pedido from "../models/Pedidos";
 import Produto from "../models/Produtos";
+import HistoricoController from "../controllers/HistoricoController";
 
 class CarrinhoController {
     async store(request, response) {
@@ -14,17 +15,25 @@ class CarrinhoController {
         request.body.id_cliente = request.clienteId
         var pedidos = await Pedido.findAll({where: {id_cliente: request.body.id_cliente} } );
         var total = 0
+        var desc = [];
         for (var i = 0; i < pedidos.length; i++) {
-            total = parseFloat(pedidos[i].soma_produtos) + parseFloat(total)
+            total = parseFloat(pedidos[i].soma_produtos) + parseFloat(total)        
+
             const produto = await Produto.findOne({where:{id: pedidos[i].id_produto}})
+
+            desc.push(`Produto${i}: ${produto.nome}, quantidade: ${pedidos[i].quantidade}`)
+
             request.body.quantidade = produto.quantidade - pedidos[i].quantidade
             await produto.update(request.body)
+            
         }
-        
+
         request.body.valor_total = total
 
         const carrinho = await Carrinho.create(request.body)
 
+        const hist = await HistoricoController.store(request, response)
+        
         return response.json(carrinho);
     };   
     async update(request, response) {

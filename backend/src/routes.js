@@ -5,6 +5,7 @@ import PedidoController from './app/controllers/PedidoController';
 import ClientesController from './app/controllers/ClientesController';
 import CarrinhoController from './app/controllers/CarrinhoController';
 import SessionController from './app/controllers/SessionController';
+import HistoricoController from './app/controllers/HistoricoController';
 import authMiddleware from './app/middlewares/auth';
 
 const routes = new Router();
@@ -51,6 +52,9 @@ routes.put('/pedidos/:id', PedidoController.update);
 routes.get('/busca-pedidos/:id', PedidoController.showPedidoId);
 routes.delete('/pedidos/:id', PedidoController.delete);
 routes.post('/pedidos', PedidoController.store);
+
+routes.post('/historico', HistoricoController.store);
+routes.get('/historico', HistoricoController.showHistoricoCliente);
 
 
 export default routes;
