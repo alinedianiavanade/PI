@@ -12,12 +12,14 @@
                     [class.active]="i == currentIndex">
                     <div class="card">
                         <div class="card-body">
-                            <div class="card-img-actions"> <img src="{{ produto.imgurl }}" class="card-img img-fluid"
-                                    width="60" height="280" alt=""> </div>
+                            <div class="card-img-actions"> <a routerLink="../produto-info/{{ produto.id }}"> <img
+                                        src="{{ produto.imgurl }}" class="card-img img-fluid" width="60" height="280"
+                                        alt=""> </a></div>
                         </div>
                         <div class="card-body bg-light text-center">
                             <div class="mb-2">
-                                <h6 class="nome-produto"> <a href="#" class="nome-produto" data-abc="true">{{
+                                <h6 class="nome-produto"> <a routerLink="../produto-info/{{ produto.id }}"
+                                        class="nome-produto" data-abc="true">{{
                                         produto.nome }}</a> </h6>
                             </div>
                             <h3 class="mb-0 font-weight-semibold">R$ {{ produto.preco }}</h3>

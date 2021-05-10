@@ -44,3 +44,19 @@ header nav ul li a {
 header nav ul li a:hover{
     color: #d9ff00;
 }
+
+@media (max-width: 741px){
+    header img{
+        height: 75px;
+        padding-top: 6px;
+        padding-left: 15px;
+    }
+}
+
+@media (max-width: 700px){
+    header img{
+        height: 65px;
+        padding-top: 6px;
+        padding-left: 15px;
+    }
+}
