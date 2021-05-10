@@ -1,0 +1,48 @@
+<main>
+    <div class="banner">
+        <img src="assets/img/banner-home.png" alt="Banner Principal" width="100%">
+    </div>
+    <div class="main-content">
+        <div class="title">
+            <p>Produtos em Destaque</p>
+        </div>
+        <div class="container d-flex justify-content-center mt-50 mb-50">
+            <div class="row">
+                <div class="col-md-4 mt-2" *ngFor="let produto of produtos; let i = index"
+                    [class.active]="i == currentIndex">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-img-actions"> <img src="{{ produto.imgurl }}" class="card-img img-fluid"
+                                    width="60" height="280" alt=""> </div>
+                        </div>
+                        <div class="card-body bg-light text-center">
+                            <div class="mb-2">
+                                <h6 class="nome-produto"> <a href="#" class="nome-produto" data-abc="true">{{
+                                        produto.nome }}</a> </h6>
+                            </div>
+                            <h3 class="mb-0 font-weight-semibold">R$ {{ produto.preco }}</h3>
+                            <button type="button" class="btn bg-cart"><i class="fa fa-cart-plus mr-2"></i> Add to
+                                cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="newsletter">
+            <div class="newsletter-banner">
+                <img src="assets/img/sales-newsletter.png" alt="">
+            </div>
+            <div class="newsletter-content">
+                <h2>Fique por dentro das promoções!</h2>
+                <p>Siga-nos nas redes sociais e tenha acesso em primeira mão à todas as nossas promoções! Estamos
+                    constantemente avisando nossos seguidores antecipadamente, quando alguma nova oferta é
+                    disponibilizada!</p>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-youtube"></i>
+                <i class="fab fa-twitter"></i>
+
+            </div>
+        </div>
+    </div>
+</main>

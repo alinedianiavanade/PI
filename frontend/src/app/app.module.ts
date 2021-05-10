@@ -12,6 +12,7 @@ import { ProdutoCreateComponent } from './components/produto-create/produto-crea
 import { ProdutoDetalhesComponent } from './components/produto-detalhes/produto-detalhes.component';
 import { ProdutoListaComponent } from './components/produto-lista/produto-lista.component';
 import { ProdutoAdminComponent } from './components/produto-admin/produto-admin.component';
+import { PaginaPrincipalComponent } from './components/pagina-principal/pagina-principal.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ProdutoAdminComponent } from './components/produto-admin/produto-admin.
     ProdutoDetalhesComponent,
     ProdutoListaComponent,
     ProdutoAdminComponent,
+    PaginaPrincipalComponent,
   ],
   imports: [
     BrowserModule,
