@@ -8,7 +8,7 @@ class PedidoController {
         request.body.soma_produtos = request.body.quantidade * produto.preco
         const pedido = await Pedido.create(request.body);
 
-        return response.json(pedido)
+        return response.json({pedido})
     };
 
     async show(request, response) {

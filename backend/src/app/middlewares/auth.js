@@ -6,8 +6,6 @@ import authConfig from '../../config/auth';
 export default async (request , response, next) => {
     const authHeader = request.headers.authorization;
 
-    console.log(authHeader);
-
     if(!authHeader){
         return response.status(401).json({error: "Token não fornecido"});
     }
@@ -18,9 +16,11 @@ export default async (request , response, next) => {
         const decoded = await promisify(jwt.verify)(token, authConfig.secret);
 
         request.clienteId = decoded.id;
+        console.log(decoded)
 
         return next();
-    } catch (err) {
+    }
+     catch (err) {
         return response.status(401).json({ error: 'Token inválido' })
     }
 };

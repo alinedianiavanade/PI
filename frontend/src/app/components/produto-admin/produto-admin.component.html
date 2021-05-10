@@ -1,0 +1,64 @@
+<div class="list row box-content">
+    <div class="busca">
+        <input type="text" class="form-control" placeholder="Buscar por nome" [(ngModel)]="nome" />
+
+        <button class="btn btn-outline-secondary" type="button" (click)="searchNome()">
+            Buscar
+        </button>
+    </div>
+    <div class="col-md-6">
+        <h4>Lista de Produtos</h4>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let produto of produtos; let i = index"
+                [class.active]="i == currentIndex" (click)="setActiveProduto(produto, i)">
+                {{ produto.nome }}
+            </li>
+        </ul>
+
+        <section class="list-group-item" id="center">
+            <button class="m-3 btn btn-sm btn-danger" (click)="removeAllProdutos()">
+                Excluir todos os Produtos
+            </button>
+            <button class="m-3 btn btn-sm btn-success" routerLink="add">
+                Cadastrar Produto
+            </button>
+        </section>
+    </div>
+
+    <div class="col-md-6">
+        <div *ngIf="currentProduto" class="produto-detalhes">
+            <h4>Produto</h4>
+            <div>
+                <label><strong>Nome:</strong></label>
+                <span>{{ currentProduto.nome }}</span>
+            </div>
+            <div>
+                <label><strong>Descrição:</strong></label>
+                {{ currentProduto.descricao }}
+            </div>
+            <div>
+                <label><strong>Quantidade:</strong></label>
+                {{ currentProduto.quantidade }}
+            </div>
+            <div>
+                <label><strong>Preço:</strong></label>
+                {{ currentProduto.preco }}
+            </div>
+            <div>
+                <label><strong>URL da Imagem:</strong></label>
+                {{ currentProduto.imgurl }}
+            </div>
+            <div>
+                <label><strong>Id Categoria:</strong></label>
+                {{ currentProduto.id_categoria }}
+            </div>
+
+
+            <a class="badge badge-warning" routerLink="/produtos/{{ currentProduto.id }}">Editar</a>
+        </div>
+        <div *ngIf="!currentProduto">
+            <br />
+            <p>Selecione um produto</p>
+        </div>
+    </div>
+</div>

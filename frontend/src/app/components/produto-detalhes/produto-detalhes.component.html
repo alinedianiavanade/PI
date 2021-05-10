@@ -1,0 +1,48 @@
+<div class="produto-edit">
+    <div *ngIf="currentProduto.id" class="edit-form">
+        <h4>Produto</h4>
+        <form>
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" id="nome" [(ngModel)]="currentProduto.nome" name="nome" />
+            </div>
+            <div class="form-group">
+                <label for="descricao">Descrição</label>
+                <input type="text" class="form-control" id="descricao" [(ngModel)]="currentProduto.descricao"
+                    name="descricao" />
+            </div>
+            <div class="form-group">
+                <label for="quantidade">Quantidade</label>
+                <input type="text" class="form-control" id="quantidade" [(ngModel)]="currentProduto.quantidade"
+                    name="quantidade" />
+            </div>
+            <div class="form-group">
+                <label for="preco">Preço</label>
+                <input type="text" class="form-control" id="preco" [(ngModel)]="currentProduto.preco" name="preco" />
+            </div>
+            <div class="form-group">
+                <label for="imgurl">Url da Imagem</label>
+                <input type="text" class="form-control" id="imgurl" [(ngModel)]="currentProduto.imgurl" name="imgurl" />
+            </div>
+            <div class="form-group">
+                <label for="id_categoria">Id Categoria</label>
+                <input type="text" class="form-control" id="id_categoria" [(ngModel)]="currentProduto.id_categoria"
+                    name="id_categoria" />
+            </div>
+        </form>
+        <button class="badge badge-danger mr-2" (click)="deleteProduto()">Deletar</button>
+        <button type="submit" class="badge badge-success mb-2" (click)="updateProduto()">Atualizar</button>
+        <div *ngIf="!atualizado">
+            <br />
+            <p>Prencha os campos ou delete o produto</p>
+        </div>
+        <div *ngIf="atualizado">
+            <br />
+            <p>{{ message }}</p>
+
+            <a routerLink="../../produto/admin"><button class="badge badge-success mb-2">Voltar à lista de
+                    produtos</button></a>
+        </div>
+
+    </div>
+</div>

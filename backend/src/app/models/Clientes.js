@@ -3,30 +3,30 @@ import bcrypt from 'bcryptjs';
 
 class Cliente extends Model {
     static init(sequelize) {
-        super.init ({
+        super.init({
             nome: Sequelize.STRING,
             email: Sequelize.STRING,
-            senha_hash: Sequelize.STRING,
             senha: Sequelize.VIRTUAL,
+            senha_hash: Sequelize.STRING,
             rua: Sequelize.STRING,
             cidade: Sequelize.STRING,
             cep: Sequelize.CHAR,
             estado: Sequelize.CHAR,
             cpf: Sequelize.CHAR,
-        } , {
+        }, {
             sequelize,
-        modelName:'Clientes'
+            modelName: 'Clientes'
         });
 
         this.addHook('beforeSave', async (cliente) => {
-			if (cliente.senha) {
-				cliente.senha_hash = await bcrypt.hash(cliente.senha, 8);
-			}
-		});
-        Cliente.associate = function(models) {
+            if (cliente.senha) {
+                cliente.senha_hash = await bcrypt.hash(cliente.senha, 8);
+            }
+        });
+        Cliente.associate = function (models) {
 
-            Cliente.hasMany(models.Pedido, {as: 'pedidos'});
-            Cliente.hasMany(models.Historico, {as: 'Historicos'});
+            Cliente.hasMany(models.Pedido, { as: 'pedidos' });
+            Cliente.hasMany(models.Historico, { as: 'Historicos' });
         }
         return this;
     }
@@ -35,4 +35,4 @@ class Cliente extends Model {
     }
 }
 
-export default Cliente; 
+export default Cliente;
