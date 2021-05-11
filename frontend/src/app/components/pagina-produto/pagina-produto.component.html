@@ -1,0 +1,17 @@
+<main>
+    <section class="banner">
+        <div class="container">
+            <div class="imagem">
+            <img src="{{currentProduto.imgurl}}" alt="" srcset="">
+            </div>
+            <div class="texto">
+               <h2> {{ currentProduto.nome }}</h2>
+               {{currentProduto.descricao}}
+               <br><br>
+               R$ {{currentProduto.preco}}
+                <br>
+               <button type="button" class="btn bg-cart"><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
+            </div>
+        </div>
+    </section>
+</main>

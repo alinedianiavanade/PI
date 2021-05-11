@@ -12,12 +12,12 @@
                 [class.active]="i == currentIndex" (click)="setActiveProduto(produto, i)">
                 <div class="card">
                     <div class="card-body">
-                        <div class="card-img-actions"> <img src="{{ produto.imgurl }}" class="card-img img-fluid"
-                                width="60" height="280" alt=""> </div>
+                        <a routerLink="../produto-info/{{produto.id}}"><div class="card-img-actions"> <img src="{{ produto.imgurl }}" class="card-img img-fluid"
+                                width="60" height="280" alt=""> </div></a>
                     </div>
                     <div class="card-body bg-light text-center">
                         <div class="mb-2">
-                            <h6 class="nome-produto"> <a href="#" class="nome-produto" data-abc="true">{{
+                            <h6 class="nome-produto"> <a routerLink="../produto-info/{{produto.id}}" class="nome-produto" data-abc="true">{{
                                     produto.nome }}</a> </h6>
                         </div>
                         <h3 class="mb-0 font-weight-semibold">R$ {{ produto.preco }}</h3>
