@@ -2,31 +2,31 @@
 
 <body class = corpo>
 <section class = "caixa"> 
-<form>
+<form name="form" (ngSubmit)="f.form.valid" #f="ngForm" novalidate>
   <h1> Cadastre-se </h1>
     <label class = nome>
       <p > Nome:  </p>
       <input class="form-control" id="nome" [(ngModel)]="cliente.nome" type="text" name="nome" />
      
     </label>
-    <br>
     <label class = email>
       <p > Email: </p>
-      <input class="form-control" id="email" [(ngModel)]="cliente.email" type="text" name="email" />
+      <input type="text" class="form-control" name="email" id="email" [(ngModel)]="cliente.email" name="email" required
+
+                    #email="ngModel" />
       
     </label>
-    <br>
+    <div class="erro" role="alert" *ngIf="email.errors && f.submitted"> <p> Email is required! </p> </div>
     <label class = cpf>
       <p > CPF: </p>
       <input class="form-control" id="cpf" [(ngModel)]="cliente.cpf" type="text" name="cpf" />
     </label>
-   <br>
     <label class = senha>
       <p > Senha: </p>
-      <input class="form-control" id="senha" [(ngModel)]="cliente.senha" type="text" name="senha" />
+      <input class="form-control" id="senha" [(ngModel)]="cliente.senha" type="text" name="senha" required #senha="ngModel"  />
+      
     </label>
-    <br>
-
+    <div class="erro" role="alert" *ngIf="senha.errors && f.submitted"> <p> Password is required! </p> </div>
     <div>
       <h4>Endereço</h4>
     
@@ -57,6 +57,7 @@
   </form>
 
   </section>
+  
   <div *ngIf="submitted">
     <h4>Cliente cadastrado com sucesso!</h4> 
   </div>
