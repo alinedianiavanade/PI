@@ -1,0 +1,116 @@
+.corpo {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.356), rgba(0, 0, 0, 0.836)), url(../profile-editor/logo.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  width: 2000px;
+  height: 1000px;
+}
+
+
+.rua {
+  display: flex;
+  justify-content: space-around;
+  margin-right: 2px;
+  margin-left: 18px;
+
+}
+
+.cidade {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.estado {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.cep {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 18px;
+}
+
+.nome {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 30px;
+  margin-right: 20px;
+}
+
+.email {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 30px;
+  margin-right: 20px;
+}
+
+.cpf {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 40px;
+  margin-right: 20px;
+}
+
+.senha {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 30px;
+  margin-right: 20px;
+}
+
+.caixa {
+  border-color: #512DA8;
+  width: 680px;
+  height: 1000px;
+  border-radius: 25px;
+  background: #512DA8;
+  padding: 130px;
+  padding-top: 110px;
+  margin-left: 600px;
+  margin-right: 45px;
+
+
+}
+
+h1,
+h4 {
+  color: #ffd700;
+  max-width: 1200px;
+  font-size: 40px;
+  line-height: 70px;
+  letter-spacing: 1px;
+  margin: 5 px 2px;
+  text-align: center;
+}
+
+
+
+label {
+  margin-top: 6px;
+  color: #000;
+  width: none;
+}
+
+p {
+  color: #ffd700;
+  margin-right: 5px;
+  margin-top: 10px;
+
+}
+
+button {
+  width: 95%;
+  margin-left: 150px;
+  width: 150px;
+  border: 1px solid #512DA8;
+  color: #000;
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 25px;
+  cursor: pinter;
+  background: #ffd700;
+}

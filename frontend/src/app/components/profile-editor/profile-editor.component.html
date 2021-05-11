@@ -1,0 +1,64 @@
+
+
+<body class = corpo>
+<section class = "caixa"> 
+<form>
+  <h1> Cadastre-se </h1>
+    <label class = nome>
+      <p > Nome:  </p>
+      <input class="form-control" id="nome" [(ngModel)]="cliente.nome" type="text" name="nome" />
+     
+    </label>
+    <br>
+    <label class = email>
+      <p > Email: </p>
+      <input class="form-control" id="email" [(ngModel)]="cliente.email" type="text" name="email" />
+      
+    </label>
+    <br>
+    <label class = cpf>
+      <p > CPF: </p>
+      <input class="form-control" id="cpf" [(ngModel)]="cliente.cpf" type="text" name="cpf" />
+    </label>
+   <br>
+    <label class = senha>
+      <p > Senha: </p>
+      <input class="form-control" id="senha" [(ngModel)]="cliente.senha" type="text" name="senha" />
+    </label>
+    <br>
+
+    <div>
+      <h4>Endereço</h4>
+    
+      <label class= rua>
+        <p > Rua: </p> 
+        <input class="form-control" id="rua" [(ngModel)]="cliente.rua" type="text" name="rua" />
+      </label>
+     
+      <label class= cidade>
+        <p > Cidade: </p>
+        <input class="form-control" id="cidade" [(ngModel)]="cliente.cidade" type="text" name="cidade" />
+      </label>
+     
+      <label class = estado>
+        <p > Estado: </p>
+        <input class="form-control" id="cidade" [(ngModel)]="cliente.estado" type="text" name="estado" />
+      </label>
+    
+      <label class = cep>
+        <p > CEP: </p>
+        <input class="form-control" id="cep" [(ngModel)]="cliente.cep" type="text" name="cep" />
+      </label>
+      <br>
+    </div>
+    <br>
+    <button (click)="saveCliente()">Submit</button>
+
+  </form>
+
+  </section>
+
+  <div *ngIf="submitted">
+    <h4>Produto cadastrado com sucesso!</h4> </div>
+  
+  </body>

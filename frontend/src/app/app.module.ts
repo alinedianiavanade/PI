@@ -12,6 +12,10 @@ import { ProdutoCreateComponent } from './components/produto-create/produto-crea
 import { ProdutoDetalhesComponent } from './components/produto-detalhes/produto-detalhes.component';
 import { ProdutoListaComponent } from './components/produto-lista/produto-lista.component';
 import { ProdutoAdminComponent } from './components/produto-admin/produto-admin.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
+
+
 
 @NgModule({
   declarations: [
@@ -23,6 +27,7 @@ import { ProdutoAdminComponent } from './components/produto-admin/produto-admin.
     ProdutoDetalhesComponent,
     ProdutoListaComponent,
     ProdutoAdminComponent,
+    ProfileEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +35,7 @@ import { ProdutoAdminComponent } from './components/produto-admin/produto-admin.
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
