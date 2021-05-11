@@ -114,3 +114,30 @@ button {
   cursor: pinter;
   background: #ffd700;
 }
+
+@media (max-width: 900px) {
+
+  section.caixa {
+    flex-wrap: wrap;
+    height: 400px;
+    padding: 40px;
+    text-align: center;
+    padding: 0 40px 40px;
+    margin-left: 500px;
+    margin-right: 150px;
+  }
+}
+
+@media (max-width:515px) {
+  section.caixa {
+    flex-wrap: wrap;
+    height: 400px;
+    padding: 40px;
+    text-align: center;
+    padding: 0 40px 40px;
+    margin-left: 300px;
+    margin-right: 150px;
+    height: 1000px;
+    padding-top: 110px;
+  }
+}

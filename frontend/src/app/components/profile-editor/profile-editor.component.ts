@@ -4,6 +4,8 @@ import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { ClienteService } from '../../services/cliente.service';
 import { Cliente } from '../../models/cliente.model';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 
 @Component({
@@ -28,7 +30,7 @@ export class ProfileEditorComponent {
   submitted = false;
 
 
-  constructor(private clienteService: ClienteService) { }
+  constructor(private clienteService: ClienteService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -49,6 +51,7 @@ export class ProfileEditorComponent {
         response => {
           console.log(response)
           this.submitted = true;
+          this.router.navigate(['/login']);
         },
         error => {
           console.log(error);
