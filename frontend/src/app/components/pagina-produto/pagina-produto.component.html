@@ -1,16 +1,36 @@
 <main>
     <section class="banner">
         <div class="container">
+            <div class="borda">
             <div class="imagem">
             <img src="{{currentProduto.imgurl}}" alt="" srcset="">
+            </div>
             </div>
             <div class="texto">
                <h2> {{ currentProduto.nome }}</h2>
                {{currentProduto.descricao}}
-               <br><br>
+               <br>
                R$ {{currentProduto.preco}}
-                <br>
-               <button type="button" class="btn bg-cart"><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
+                <br><br>
+                <div class="qtd">
+                    Quantidade:
+                    <select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                      </select>
+                </div>
+                <div class="botao">
+                <button type="button" class="btn bg-cart"> Add to cart</button>
+                </div>
+
             </div>
         </div>
     </section>
