@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BoardUserComponent } from './board-user/board-user.component';
 import { PaginaPrincipalComponent } from './components/pagina-principal/pagina-principal.component';
 import { ProdutoAdminComponent } from './components/produto-admin/produto-admin.component';
 import { ProdutoCreateComponent } from './components/produto-create/produto-create.component';

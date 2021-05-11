@@ -1,0 +1,40 @@
+<div class="col-md-12">
+    <div class="card card-container">
+        <img id="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" class="profile-img-card" />
+        <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" name="email" [(ngModel)]="form.email" required
+                    #email="ngModel" />
+                <div class="alert alert-danger" role="alert" *ngIf="email.errors && f.submitted">
+                    Email is required!
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="senha" class="form-control" name="senha" [(ngModel)]="form.senha" required minlength="6"
+                    #senha="ngModel" />
+                <div class="alert alert-danger" role="alert" *ngIf="senha.errors && f.submitted">
+                    <div *ngIf="senha.errors.required">Senha obrigatória</div>
+                    <div *ngIf="senha.errors.minlength">
+                        Password must be at least 6 characters
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-block">
+                    Login
+                </button>
+            </div>
+            <div class="form-group">
+                <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isLoginFailed">
+                    Login inválido.
+                </div>
+            </div>
+        </form>
+
+        <div class="alert alert-success" *ngIf="isLoggedIn">
+            Usuário logado com sucesso!
+        </div>
+    </div>
+</div>
