@@ -1,0 +1,66 @@
+<body class="corpo">
+    <section class="caixa">
+        <form name="form" (ngSubmit)="f.form.valid" #f="ngForm" novalidate>
+            <h1> Cadastre-se </h1>
+            <label class="nome">
+                <p> Nome: </p>
+                <input class="form-control" id="nome" [(ngModel)]="cliente.nome" type="text" name="nome" />
+
+            </label>
+            <label class="email">
+                <p> Email: </p>
+                <input type="text" class="form-control" name="email" id="email" [(ngModel)]="cliente.email" name="email"
+                    required #email="ngModel" />
+
+            </label>
+            <div class="erro" role="alert" *ngIf="email.errors && f.submitted">
+                <p> Email is required! </p>
+            </div>
+            <label class=cpf>
+                <p> CPF: </p>
+                <input class="form-control" id="cpf" [(ngModel)]="cliente.cpf" type="text" name="cpf" />
+            </label>
+            <label class="senha">
+                <p> Senha: </p>
+                <input class="form-control" id="senha" [(ngModel)]="cliente.senha" type="text" name="senha" required
+                    #senha="ngModel" />
+
+            </label>
+            <div class="erro" role="alert" *ngIf="senha.errors && f.submitted">
+                <p> Password is required! </p>
+            </div>
+            <div>
+                <h4>Endereço</h4>
+
+                <label class="rua">
+                    <p> Rua: </p>
+                    <input class="form-control" id="rua" [(ngModel)]="cliente.rua" type="text" name="rua" />
+                </label>
+
+                <label class="cidade">
+                    <p> Cidade: </p>
+                    <input class="form-control" id="cidade" [(ngModel)]="cliente.cidade" type="text" name="cidade" />
+                </label>
+
+                <label class="estado">
+                    <p> Estado: </p>
+                    <input class="form-control" id="cidade" [(ngModel)]="cliente.estado" type="text" name="estado" />
+                </label>
+
+                <label class="cep">
+                    <p> CEP: </p>
+                    <input class="form-control" id="cep" [(ngModel)]="cliente.cep" type="text" name="cep" />
+                </label>
+            </div>
+            <div *ngIf="!submitted" class="botao-cadastrar"><button (click)="saveCliente()">Cadastrar</button></div>
+            <div *ngIf="submitted" class="submitted">
+                <h4>Cadastro realizado com sucesso!</h4>
+                <button class="btn btn-success" routerLink="../login">Fazer Login</button>
+            </div>
+        </form>
+
+    </section>
+
+
+
+</body>

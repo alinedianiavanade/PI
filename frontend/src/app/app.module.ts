@@ -17,6 +17,7 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { CadastroClienteComponent } from './components/cadastro-cliente/cadastro-cliente.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     PaginaPrincipalComponent,
     LoginComponent,
     ProfileComponent,
+    CadastroClienteComponent,
   ],
   imports: [
     BrowserModule,
