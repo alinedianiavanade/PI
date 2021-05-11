@@ -29,12 +29,6 @@ main{
 .mt-2{
     padding-bottom: 30px;
 }
-
-.busca {
-    display: flex;
-    width: 300px;
-    padding-left: 15px;
-}
 .nome-produto{
     font-size: 16px;
 }
@@ -74,10 +68,6 @@ main{
 
 .card-img {
     width: 350px
-}
-
-.star {
-    color: red
 }
 
 .bg-cart {
@@ -141,5 +131,14 @@ a {
     }
     .newsletter .newsletter-content{
         text-align: center;
+    }
+}
+
+@media (max-width:665px){
+    .newsletter-banner{
+        margin-left: 30px;
+    }
+    .newsletter-banner img{
+        width: 90%;
     }
 }

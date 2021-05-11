@@ -59,7 +59,7 @@ main{
 }
 
 .card-img {
-    width: 350px
+    width: 95%
 }
 
 .star {
@@ -88,3 +88,5 @@ main{
 a {
     text-decoration: none !important
 }
+
+
