@@ -1,21 +1,44 @@
 <div class="container" *ngIf="currentCliente; else loggedOut">
-    <header class="jumbotron">
-        <h3>
-            <strong>{{ decoded.nome }}</strong> Profile
-        </h3>
-    </header>
+    <h3>
+        Olá, <strong>{{ decoded.nome }}</strong>
+    </h3>
+
+    <h3>
+        Seus dados cadastrados são:
+    </h3>
+
     <p>
-        <strong>Token:</strong>
-        {{ currentCliente.token.substring(0, 20) }} ...
-        {{ currentCliente.token.substr(currentCliente.token.length - 20) }}
+        <strong>Id Cliente:</strong>
+        {{ decoded.id }}
     </p>
     <p>
         <strong>Email:</strong>
         {{ decoded.email }}
     </p>
+
     <p>
-        <strong>Id Cliente:</strong>
-        {{ decoded.id }}
+        <strong>Nome:</strong>
+        {{ decoded.nome }}
+    </p>
+    <p>
+        <strong>Rua:</strong>
+        {{ decoded.rua }}
+    </p>
+    <p>
+        <strong>Cidade:</strong>
+        {{ decoded.cidade }}
+    </p>
+    <p>
+        <strong>Estado:</strong>
+        {{ decoded.estado }}
+    </p>
+    <p>
+        <strong>CEP:</strong>
+        {{ decoded.cep }}
+    </p>
+    <p>
+        <strong>CPF:</strong>
+        {{ decoded.cpf }}
     </p>
 </div>
 

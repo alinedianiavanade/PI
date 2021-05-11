@@ -17,7 +17,6 @@ export class ProfileComponent implements OnInit {
     this.currentCliente = this.token.getCliente();
     var tokenDec = this.currentCliente.token
     this.decoded = jwt_decode(tokenDec);
-    console.log(this.decoded);
   }
 
 }

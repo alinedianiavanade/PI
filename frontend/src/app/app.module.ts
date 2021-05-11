@@ -15,7 +15,6 @@ import { ProdutoAdminComponent } from './components/produto-admin/produto-admin.
 import { PaginaPrincipalComponent } from './components/pagina-principal/pagina-principal.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
-import { BoardUserComponent } from './board-user/board-user.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 
@@ -32,7 +31,6 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     PaginaPrincipalComponent,
     LoginComponent,
     ProfileComponent,
-    BoardUserComponent,
   ],
   imports: [
     BrowserModule,
