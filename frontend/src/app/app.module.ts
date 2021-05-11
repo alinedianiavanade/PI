@@ -13,6 +13,11 @@ import { ProdutoDetalhesComponent } from './components/produto-detalhes/produto-
 import { ProdutoListaComponent } from './components/produto-lista/produto-lista.component';
 import { ProdutoAdminComponent } from './components/produto-admin/produto-admin.component';
 import { PaginaPrincipalComponent } from './components/pagina-principal/pagina-principal.component';
+import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
+import { BoardUserComponent } from './board-user/board-user.component';
+
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -25,6 +30,9 @@ import { PaginaPrincipalComponent } from './components/pagina-principal/pagina-p
     ProdutoListaComponent,
     ProdutoAdminComponent,
     PaginaPrincipalComponent,
+    LoginComponent,
+    ProfileComponent,
+    BoardUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +41,7 @@ import { PaginaPrincipalComponent } from './components/pagina-principal/pagina-p
     BrowserAnimationsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
