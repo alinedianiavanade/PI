@@ -14,7 +14,7 @@
             </div>
             <div class="form-group">
                 <label for="senha">Senha</label>
-                <input type="senha" class="form-control" name="senha" [(ngModel)]="form.senha" required minlength="6"
+                <input type="password" class="form-control" name="senha" [(ngModel)]="form.senha" required minlength="6"
                     #senha="ngModel" />
                 <div class="alert alert-danger" role="alert" *ngIf="senha.errors && f.submitted">
                     <div *ngIf="senha.errors.required">Senha obrigatória</div>

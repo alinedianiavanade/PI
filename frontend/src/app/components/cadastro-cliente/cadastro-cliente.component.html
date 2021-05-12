@@ -22,14 +22,14 @@
             </label>
             <label class="senha">
                 <p> Senha: </p>
-                <input class="form-control" id="senha" [(ngModel)]="cliente.senha" type="text" name="senha" required
+                <input class="form-control" id="senha" [(ngModel)]="cliente.senha" type="password" name="senha" required
                     #senha="ngModel" />
 
             </label>
             <div class="erro" role="alert" *ngIf="senha.errors && f.submitted">
                 <p> Password is required! </p>
             </div>
-            <div>
+            <div class="end">
                 <h4>Endereço</h4>
 
                 <label class="rua">

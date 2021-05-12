@@ -10,7 +10,9 @@
     align-items: center;
   }
   
-  
+  .end{
+    width: 100%;
+  }
   .rua {
     display: flex;
     justify-content: space-around;
