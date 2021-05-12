@@ -29,7 +29,7 @@ class SessionController {
                 estado,
                 cpf,
             },
-            token: jwt.sign({ id, nome, email, rua, cidade, cep, estado, cpf }, authConfig.secret, {
+            token: jwt.sign({ id, nome, email, rua, cidade, cep, estado }, authConfig.secret, {
                 expiresIn: authConfig.expiresIn,
             }),
         })

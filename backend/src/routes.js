@@ -39,7 +39,7 @@ routes.post('/session', SessionController.store);
 
 routes.use(authMiddleware);
 
-routes.put('/clientes', ClientesController.update);
+routes.put('/cliente', ClientesController.update);
 routes.delete('/clientes', ClientesController.delete);
 routes.get('/cliente', ClientesController.showClienteId);
 
