@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import jwt_decode from 'jwt-decode';
+import * as jwt from '../_helpers/auth.interceptor';
 
 const TOKEN_KEY = 'auth-token';
-const CLIENTE_KEY = 'auth-id';
+const CLIENTE_KEY = 'auth-cliente';
 
 @Injectable({
   providedIn: 'root'

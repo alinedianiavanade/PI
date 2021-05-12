@@ -1,47 +1,50 @@
-<div class="container" *ngIf="currentCliente; else loggedOut">
-    <h3>
-        Olá, <strong>{{ decoded.nome }}</strong>
-    </h3>
+<div class="container" *ngIf="currentCliente">
+    <div class="cliente-edit">
+        <div *ngIf="decoded.id" class="edit-form">
+            <h3>
+                Olá, <strong>{{ decoded.nome }}</strong>
+            </h3>
+            <h3>
+                {{ decoded.token }}
+            </h3>
+            <form>
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" class="form-control" id="nome" [(ngModel)]="decoded.nome" name="nome" />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" id="email" [(ngModel)]="decoded.email" name="email" />
+                </div>
+                <div class="form-group">
+                    <label for="rua">Rua</label>
+                    <input type="text" class="form-control" id="rua" [(ngModel)]="decoded.rua" name="rua" />
+                </div>
+                <div class="form-group">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" class="form-control" id="cidade" [(ngModel)]="decoded.cidade" name="cidade" />
+                </div>
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <input type="text" class="form-control" id="estado" [(ngModel)]="decoded.estado" name="estado" />
+                </div>
+                <div class="form-group">
+                    <label for="cep">CEP</label>
+                    <input type="text" class="form-control" id="cpf" [(ngModel)]="decoded.cep" name="cep" />
+                </div>
+            </form>
+            <button type="submit" class="badge badge-success mb-2" (click)="updateCliente()">Atualizar</button>
+            <div *ngIf="!atualizado">
+                <br />
+                <p>Caso necessário, atualize um campo e clique no botão acima.</p>
+            </div>
+            <div *ngIf="atualizado">
+                <br />
+                <p>{{ message }}</p>
 
-    <h3>
-        Seus dados cadastrados são:
-    </h3>
+                <a routerLink="../../produtos"><button class="badge badge-success mb-2">Voltar a comprar</button></a>
+            </div>
 
-    <p>
-        <strong>Id Cliente:</strong>
-        {{ decoded.id }}
-    </p>
-    <p>
-        <strong>Email:</strong>
-        {{ decoded.email }}
-    </p>
-
-    <p>
-        <strong>Nome:</strong>
-        {{ decoded.nome }}
-    </p>
-    <p>
-        <strong>Rua:</strong>
-        {{ decoded.rua }}
-    </p>
-    <p>
-        <strong>Cidade:</strong>
-        {{ decoded.cidade }}
-    </p>
-    <p>
-        <strong>Estado:</strong>
-        {{ decoded.estado }}
-    </p>
-    <p>
-        <strong>CEP:</strong>
-        {{ decoded.cep }}
-    </p>
-    <p>
-        <strong>CPF:</strong>
-        {{ decoded.cpf }}
-    </p>
+        </div>
+    </div>
 </div>
-
-<ng-template #loggedOut>
-    Please login.
-</ng-template>

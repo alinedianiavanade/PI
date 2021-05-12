@@ -16,16 +16,16 @@ export class ClienteService {
     return this.http.get<Cliente[]>(`${baseUrl}/clientes`);
   }
 
-  get(id: any): Observable<Cliente> {
-    return this.http.get(`${baseUrl}/cliente/${id}`);
+  get(): Observable<Cliente> {
+    return this.http.get(`${baseUrl}/cliente`);
   }
 
   create(data: any): Observable<any> {
     return this.http.post(`${baseUrl}/clientes`, data);
   }
 
-  update(id: any, data: any): Observable<any> {
-    return this.http.put(`${baseUrl}/cliente/${id}`, data);
+  update(data: any): Observable<any> {
+    return this.http.put(`${baseUrl}/cliente`, data);
   }
 
   delete(id: any): Observable<any> {
