@@ -1,0 +1,22 @@
+<main>
+    <section class="banner">
+        <div class="container">
+            <div class="borda">
+                <div class="imagem">
+                    <img src="{{currentProduto.imgurl}}" alt="" srcset="">
+                </div>
+            </div>
+            <div class="texto">
+                <h2> {{ currentProduto.nome }}</h2>
+                {{currentProduto.descricao}}
+                <br>
+                R$ {{currentProduto.preco}}
+                <br><br>
+                <div class="botao">
+                    <button type="button" class="btn bg-cart"> Add to cart</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
