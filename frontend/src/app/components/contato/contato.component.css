@@ -1,0 +1,130 @@
+.corpo {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.192), rgba(0, 0, 0, 0.267)), url(../profile-editor/logo.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  width: 1263px;
+  height: 800px;
+}
+
+.caixa {
+  border-color: #ffd700;
+  width: 680px;
+  height: 800px;
+  border-radius: 25px;
+  background: #ffd700;
+  padding: 130px;
+  padding-top: 110px;
+  margin-left: 300px;
+  margin-right: 45px;
+}
+
+h4,
+h3 {
+  color: #512DA8;
+  max-width: 1200px;
+  font-size: 40px;
+  line-height: 70px;
+  letter-spacing: 1px;
+  margin: 5 px 2px;
+  text-align: center;
+  font-weight: bold;
+
+}
+
+p {
+  color: #512DA8;
+  margin-right: 70px;
+  margin-top: 10px;
+  margin-left: 100px;
+  font-weight: bold;
+}
+
+.redesocial {
+  color: #512DA8;
+  margin-right: 30px;
+  margin-top: 20px;
+  margin-left: 10px;
+
+}
+
+.container {
+  display: flex;
+  display: space-between;
+  margin-right: 30px;
+  margin-left: 80px;
+  height: 55px;
+  width: 50px;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+  display: flex;
+  display: space-between;
+  margin-right: 10px;
+  margin-left: 0px;
+  height: 55px;
+  width: 50px;
+  margin-top: 10px;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+  display: flex;
+  display: space-between;
+  margin-right: 10px;
+  margin-left: 0px;
+  height: 55px;
+  width: 50px;
+  margin-top: 10px;
+}
+
+.mapa {
+  width: 300px;
+  height: 250px;
+  margin-top: 60px;
+
+  margin-left: 60px;
+}
+
+
+@media (max-width: 900px) {
+
+  section.caixa {
+    flex-wrap: wrap;
+    height: 400px;
+    padding: 40px;
+    text-align: center;
+    padding: 0 40px 40px;
+    margin-left: 500px;
+    margin-right: 150px;
+  }
+}
+
+@media (max-width:515px) {
+  section.caixa {
+    flex-wrap: wrap;
+    height: 400px;
+    padding: 40px;
+    text-align: center;
+    padding: 0 40px 40px;
+    margin-left: 300px;
+    margin-right: 150px;
+    height: 1000px;
+    padding-top: 110px;
+  }
+}

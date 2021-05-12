@@ -14,7 +14,7 @@ import { ProdutoListaComponent } from './components/produto-lista/produto-lista.
 import { ProdutoAdminComponent } from './components/produto-admin/produto-admin.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
-
+import { ContatoComponent } from './components/contato/contato.component';
 
 
 @NgModule({
@@ -27,7 +27,8 @@ import { ProfileEditorComponent } from './components/profile-editor/profile-edit
     ProdutoDetalhesComponent,
     ProdutoListaComponent,
     ProdutoAdminComponent,
-    ProfileEditorComponent
+    ProfileEditorComponent,
+    ContatoComponent,
   ],
   imports: [
     BrowserModule,

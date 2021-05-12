@@ -6,6 +6,7 @@ import { ProdutoDetalhesComponent } from './components/produto-detalhes/produto-
 import { ProdutoListaComponent } from './components/produto-lista/produto-lista.component';
 import { SobreComponent } from './components/sobre/sobre.component';
 import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component'
+import { ContatoComponent } from './components/contato/contato.component';
 
 const routes: Routes = [
   { path: 'sobre', component: SobreComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'produto/admin/add', component: ProdutoCreateComponent },
   { path: 'produtos/:id', component: ProdutoDetalhesComponent },
   { path: 'produto/admin', component: ProdutoAdminComponent },
+  { path: 'contato', component: ContatoComponent },
 ];
 
 @NgModule({
