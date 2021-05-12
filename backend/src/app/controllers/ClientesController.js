@@ -30,12 +30,14 @@ class ClientesController {
             cep,
             estado,
             cidade,
-            rua 
+            rua,
+            numero,
+            complemento 
         });
     }
 
     async delete(request, response) {
-        Cliente.destroy({where:{id: request.clienteId}})
+        Cliente.destroy({where:{id_cliente: request.clienteId}})
         .then(num => {
             if (num == 1) {
                 response.send({
@@ -62,7 +64,7 @@ class ClientesController {
     }
 
     async showClienteId(request, response) {
-        const {nome, email, cpf, cep, estado, cidade, rua} = await Cliente.findByPk(request.clienteId);
+        const {nome, email, cpf, cep, estado, cidade, rua} = await Cliente.findByPk(1);
 
         return response.json({
             nome,
@@ -71,7 +73,9 @@ class ClientesController {
             cep,
             estado,
             cidade,
-            rua 
+            rua,
+            numero,
+            complemento 
         });
     }
 }

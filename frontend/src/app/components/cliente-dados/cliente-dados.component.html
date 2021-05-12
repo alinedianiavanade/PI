@@ -1,0 +1,34 @@
+<div class="dados-pessoais" *ngFor="let cliente of clientes">
+    <div class="nome">
+        <div class="titulo"><h3>Nome:</h3></div>
+        <div class="conteudo"> {{cliente.nome}}</div>
+    </div>
+    <div class="rua">
+        <div class="titulo"><h3>Endereço:</h3></div>
+        <div class="conteudo">{{cliente.rua}}</div>
+    </div>
+    <div class="cidade">
+        <div class="titulo"><h3>Cidade:</h3></div>
+        <div class="conteudo">{{cliente.cidade}}</div>
+    </div>
+    <div class="estado">
+        <div class="titulo"><h3>Estado:</h3></div>
+        <div class="conteudo">{{cliente.estado}}</div>
+    </div>
+    <div class="cep">
+        <div class="titulo"><h3>CEP:</h3></div>
+        <div class="conteudo">{{cliente.cep}}</div>
+    </div>
+    <form>
+        <label for="pagamento">Forma de Pagamento:</label>
+        <select name="pagamento" id="pagamento" required>
+            <option selected disabled>Selecione uma opção</option>
+            <option value="Débito">Débito</option>
+            <option value="Crédito">Crédito</option>
+            <option value="Boleto">Boleto</option>
+            <option value="Transferência Bancária">Transferência Bancária</option>
+        </select>
+    </form>
+</div>
+<div class="dados">
+</div>

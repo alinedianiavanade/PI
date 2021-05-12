@@ -16,20 +16,20 @@ export class ProdutoService {
     return this.http.get<Produto[]>(`${baseUrl}/produtos`);
   }
 
-  get(id: any): Observable<Produto> {
-    return this.http.get(`${baseUrl}/produto/${id}`);
+  get(id_produto: any): Observable<Produto> {
+    return this.http.get(`${baseUrl}/produto/${id_produto}`);
   }
 
   create(data: any): Observable<any> {
     return this.http.post(`${baseUrl}/produto`, data);
   }
 
-  update(id: any, data: any): Observable<any> {
-    return this.http.put(`${baseUrl}/produto/${id}`, data);
+  update(id_produto: any, data: any): Observable<any> {
+    return this.http.put(`${baseUrl}/produto/${id_produto}`, data);
   }
 
-  delete(id: any): Observable<any> {
-    return this.http.delete(`${baseUrl}/produto/${id}`);
+  delete(id_produto: any): Observable<any> {
+    return this.http.delete(`${baseUrl}/produto/${id_produto}`);
   }
 
   deleteAll(): Observable<any> {

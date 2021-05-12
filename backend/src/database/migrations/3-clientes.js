@@ -3,7 +3,7 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     return queryInterface.createTable ('clientes', {
-      id: {
+      id_cliente: {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
@@ -40,6 +40,14 @@ module.exports = {
       cpf: {
         type: Sequelize.CHAR,
         allowNull: false,
+      },
+      numero: {
+        type: Sequelize.CHAR,
+        allowNull: true,
+      },
+      complemento: {
+        type: Sequelize.STRING,
+        allowNull: true,
       },
       created_at: {
         type: Sequelize.DATE,

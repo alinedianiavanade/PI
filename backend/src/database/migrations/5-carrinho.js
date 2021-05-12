@@ -14,7 +14,7 @@ module.exports = {
         allowNull: false,
         references: {
           model: 'Clientes',
-          key: 'id'
+          key: 'id_cliente'
         }
       },
       valor_total: {

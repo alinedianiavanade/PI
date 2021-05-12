@@ -29,11 +29,11 @@ export class ProdutoDetalhesComponent implements OnInit {
 
   ngOnInit(): void {
     this.message = '',
-      this.getProduto(this.route.snapshot.params.id);
+      this.getProduto(this.route.snapshot.params.id_produto);
   }
 
-  getProduto(id: string): void {
-    this.produtoService.get(id)
+  getProduto(id_produto: string): void {
+    this.produtoService.get(id_produto)
       .subscribe(
         data => {
           this.currentProduto = data;
@@ -44,7 +44,7 @@ export class ProdutoDetalhesComponent implements OnInit {
         });
   }
   updateProduto(): void {
-    this.produtoService.update(this.currentProduto.id, this.currentProduto)
+    this.produtoService.update(this.currentProduto.id_produto, this.currentProduto)
       .subscribe(
         response => {
           console.log(response);
@@ -56,7 +56,7 @@ export class ProdutoDetalhesComponent implements OnInit {
         });
   }
   deleteProduto(): void {
-    this.produtoService.delete(this.currentProduto.id)
+    this.produtoService.delete(this.currentProduto.id_produto)
       .subscribe(
         response => {
           console.log(response);

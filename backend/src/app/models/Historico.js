@@ -3,7 +3,7 @@ import Sequelize, { Model } from 'sequelize';
 class Historico extends Model {
     static init(sequelize) {
         super.init({
-            id: {
+            id_historico: {
                 type: Sequelize.INTEGER,
                 allowNull: false,
                 autoIncrement:true,

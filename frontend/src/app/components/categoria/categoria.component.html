@@ -1,0 +1,16 @@
+<div class="categoria-create">
+    <div class="submit-form">
+        <div *ngIf="!submitted">
+            <div class="form-group">
+                <label for="categoria">Categoria</label>
+                <input type="text" class="form-control" id="categoria" required [(ngModel)]="category.categoria" name="categoria" />
+            </div>
+            <button (click)="saveCategoria()" class="btn btn-success">Cadastrar</button>
+        </div>
+        <div *ngIf="submitted">
+            <h4>Categoria cadastrada com sucesso!</h4>
+            <button class="btn btn-success" (click)="newCategoria()">Adicionar nova</button>
+            <button class="btn btn-success" routerLink="../../admin">Voltar ao Admin</button>
+        </div>
+    </div>
+</div>

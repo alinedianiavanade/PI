@@ -3,6 +3,12 @@ import Sequelize, { Model } from 'sequelize';
 class Produto extends Model {
     static init(sequelize) {
         super.init({
+            id_produto: {
+                type: Sequelize.INTEGER,
+                allowNull: false,
+                autoIncrement:true,
+                primaryKey: true,
+            },
             nome: Sequelize.STRING,
             quantidade: Sequelize.STRING,
             descricao: Sequelize.STRING,

@@ -1,5 +1,5 @@
 export class Produto {
-    id?: any;
+    id_produto?: any;
     nome?: string;
     quantidade?: any;
     descricao?: string;

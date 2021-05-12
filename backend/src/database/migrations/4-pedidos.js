@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('pedidos', { 
-      id: {
+      id_pedido: {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
@@ -23,7 +23,7 @@ module.exports = {
         allowNull: false,
         references: {
           model: 'Clientes',
-          key: 'id'
+          key: 'id_cliente'
         }
         
       },
@@ -32,10 +32,27 @@ module.exports = {
         allowNull: false,
         references: {
           model: 'produtos',
-          key: 'id'
+          key: 'id_produto'
         }
       },
+      nome_produto: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      imgurl_produto: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      preco_produto: {
+        type: Sequelize.DECIMAL(7, 2),
+        allowNull: false,
+      },
       quantidade: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        defaultValue: 1,
+      },
+      quantidade_produto: {
         type: Sequelize.INTEGER,
         allowNull: false,
         defaultValue: 1,
@@ -47,7 +64,7 @@ module.exports = {
       updated_at: {
         type: Sequelize.DATE,
         allowNull: false,
-      },
+      }
       });
   },
 

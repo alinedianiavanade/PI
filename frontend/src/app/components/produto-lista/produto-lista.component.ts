@@ -52,5 +52,4 @@ export class ProdutoListaComponent implements OnInit {
           console.log(error);
         });
   }
-
 }

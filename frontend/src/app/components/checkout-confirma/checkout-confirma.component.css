@@ -1,0 +1,14 @@
+.confirma {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 120px;
+    text-align: center;
+}
+.confirma button {
+    color: #212121;
+    background-color: #FFEB3B;
+}
+.confirma h1 {
+    padding-top:20px;
+}
