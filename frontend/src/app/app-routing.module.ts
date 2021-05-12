@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastroClienteComponent } from './components/cadastro-cliente/cadastro-cliente.component';
+import { ContatoComponent } from './components/contato/contato.component';
 import { PaginaPrincipalComponent } from './components/pagina-principal/pagina-principal.component';
 import { PaginaProdutoComponent } from './components/pagina-produto/pagina-produto.component';
 import { ProdutoAdminComponent } from './components/produto-admin/produto-admin.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'cadastro', component: CadastroClienteComponent },
   { path: 'cliente', component: ProfileComponent },
+  { path: 'contato', component: ContatoComponent },
 ];
 
 @NgModule({

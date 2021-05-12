@@ -2,7 +2,7 @@
 
  header .container {
      display: flex;
-     justify-content: space-between;
+     justify-content: space-evenly;
      align-items: center;
  }
  
@@ -20,13 +20,17 @@
   padding:3px;
   }
 
+  img{
+      width: 350px;
+  }
+
  section.banner {
      padding: 50px;
  }
  
  section.banner .container {
      display: flex;
-     justify-content: space-around;
+     justify-content: space-evenly;
      align-items: center;
  }
  
@@ -46,6 +50,7 @@
    border: 1px solid #212121;
    padding:15px;
    border-radius:3px;
+   background-color: #fff;
   }
   .qdt{
       padding: 10px;
