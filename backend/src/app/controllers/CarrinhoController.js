@@ -6,14 +6,14 @@ import HistoricoController from "../controllers/HistoricoController";
 class CarrinhoController {
     async store(request, response) {
 
-        const carExists = await Carrinho.findOne({ where: { id_cliente: 1 } });
+        const carExists = await Carrinho.findOne({ where: { id_cliente: request.clienteId } });
 
         if (carExists) {
             return response.status(400).json({ error: "Esse carrinho já existe" });
         };
 
-        request.body.id_cliente = 1
-        var pedidos = await Pedido.findAll({ where: { id_cliente: request.body.id_cliente } });
+        request.body.id_cliente = request.clienteId
+        var pedidos = await Pedido.findAll({ where: { id_cliente: request.clienteId } });
         var total = 0
         var desc = [];
         for (var i = 0; i < pedidos.length; i++) {
@@ -84,7 +84,7 @@ class CarrinhoController {
         return response.json(carrinho);
     }
     async showCarrinhoIdCliente(request, response) {
-        const carrinho = await Carrinho.findOne({ where: { id_cliente: 1 } });
+        const carrinho = await Carrinho.findOne({ where: { id_cliente: request.clienteId } });
 
         return response.json(carrinho);
     }

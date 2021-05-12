@@ -19,8 +19,8 @@ export class CarrinhoService {
   delete(): Observable<any> {
     return this.http.delete(`${baseUrl}/carrinho`)
   }
-  getByCliente(id_cliente: any): Observable<any> {
-    return this.http.get(`${baseUrl}/carrinho/:${id_cliente}`)
+  getByCliente(): Observable<any> {
+    return this.http.get(`${baseUrl}/carrinho`)
   }
   update(data: any): Observable<any> {
     return this.http.put(`${baseUrl}/carrinho`, data)
