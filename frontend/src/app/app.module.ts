@@ -15,11 +15,15 @@ import { ProdutoAdminComponent } from './components/produto-admin/produto-admin.
 import { PaginaPrincipalComponent } from './components/pagina-principal/pagina-principal.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
-
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { CadastroClienteComponent } from './components/cadastro-cliente/cadastro-cliente.component';
 import { PaginaProdutoComponent } from './components/pagina-produto/pagina-produto.component';
 import { ContatoComponent } from './components/contato/contato.component';
+import { PedidosClienteListaComponent } from './components/pedidos-cliente-lista/pedidos-cliente-lista.component';
+import { ClienteDadosComponent } from './components/cliente-dados/cliente-dados.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { CheckoutConfirmaComponent } from './components/checkout-confirma/checkout-confirma.component';
+import { CarrinhoComponent } from './components/carrinho/carrinho.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +41,11 @@ import { ContatoComponent } from './components/contato/contato.component';
     CadastroClienteComponent,
     PaginaProdutoComponent,
     ContatoComponent,
+    PedidosClienteListaComponent,
+    ClienteDadosComponent,
+    CheckoutComponent,
+    CheckoutConfirmaComponent,
+    CarrinhoComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,17 @@
+.dados-pessoais {
+    text-align: center;
+}
+.nome, .rua, .cidade, .estado, .cep {
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px dotted #673AB7;
+    padding-top: 10px;
+    margin-bottom: 0px;
+}
+.conteudo {
+    padding-left: 10px;
+    padding-top: 5px;
+}
+.dados-pessoais form {
+    padding-top: 15px;
+}

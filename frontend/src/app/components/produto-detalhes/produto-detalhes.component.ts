@@ -44,7 +44,7 @@ export class ProdutoDetalhesComponent implements OnInit {
         });
   }
   updateProduto(): void {
-    this.produtoService.update(this.currentProduto.id, this.currentProduto)
+    this.produtoService.update(this.currentProduto.id_produto, this.currentProduto)
       .subscribe(
         response => {
           console.log(response);
@@ -56,7 +56,7 @@ export class ProdutoDetalhesComponent implements OnInit {
         });
   }
   deleteProduto(): void {
-    this.produtoService.delete(this.currentProduto.id)
+    this.produtoService.delete(this.currentProduto.id_produto)
       .subscribe(
         response => {
           console.log(response);

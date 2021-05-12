@@ -8,11 +8,11 @@ class ClientesController {
             return response.status(400).json({ error: "Cliente já cadastrado" });
         };
 
-        const { id, nome, email } = await Cliente.create(request.body);
+        const { id_cliente, nome, email } = await Cliente.create(request.body);
 
 
         return response.json({
-            id,
+            id_cliente,
             nome,
             email,
         });
@@ -30,12 +30,12 @@ class ClientesController {
             cep,
             estado,
             cidade,
-            rua
+            rua,
         });
     }
 
     async delete(request, response) {
-        Cliente.destroy({ where: { id: request.clienteId } })
+        Cliente.destroy({ where: { id_cliente: request.clienteId } })
             .then(num => {
                 if (num == 1) {
                     response.send({
@@ -71,10 +71,9 @@ class ClientesController {
             cep,
             estado,
             cidade,
-            rua
+            rua,
         });
     }
 }
 
 export default new ClientesController();
-

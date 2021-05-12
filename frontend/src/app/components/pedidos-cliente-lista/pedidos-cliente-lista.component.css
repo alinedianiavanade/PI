@@ -1,0 +1,74 @@
+.sem-pedido .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.sem-pedido .container h2 {
+    text-align: center;
+    width: 70%;
+    padding: 20px
+}
+.sem-pedido .container button {
+    color: #212121;
+    background-color: #FFEB3B;
+}
+.tem-pedidos .titulos {
+    padding-top: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.tem-pedidos .titulos  h1 {
+    color: #673AB7;
+    text-decoration: underline;
+    text-decoration-color: #FFEB3B;
+}
+.tem-pedidos .titulos .seu-carrinho {
+    display: flex;
+    padding-left: 200px;
+}
+.tem-pedidos .titulos .dados-pessoais {
+    padding-right: 30px;
+}
+
+.pedidos {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-left: 50px
+}
+.pedidos .tabela table tr th,.pedidos .tabela table tr td{
+    text-align: center;
+    border: 2px solid #673AB7;
+    padding: 3px;
+    background-color: #D1C4E9;
+}
+.direito {
+    display: flex;
+    flex-direction: column;
+    background-color: #D1C4E9;
+    border: 2px solid #673AB7;
+    padding: 7px;
+    align-self: flex-start;
+    margin-left: 90px;
+}
+.direito .total {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 7px;
+}
+.pedidos .tabela table tr td .foto {
+    border: 1px solid #673AB7;
+    border-radius: 3px;
+}
+.pedidos .tabela table tr td .quantidade {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.direito .checkout {
+    align-self: center;
+}

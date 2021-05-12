@@ -6,17 +6,17 @@ class Carrinho extends Model {
             id_carrinho: {
                 type: Sequelize.INTEGER,
                 allowNull: false,
-                autoIncrement:true,
+                autoIncrement: true,
                 primaryKey: true,
             },
             id_cliente: Sequelize.INTEGER,
-            valor_total: Sequelize.DECIMAL(10,2),
-        },{
+            valor_total: Sequelize.DECIMAL(10, 2),
+        }, {
             sequelize
         });
 
         Carrinho.associate = function (models) {
-            Carrinho.hasMany(models.Clientes, {as:'Clientes'})
+            Carrinho.hasMany(models.Clientes, { as: 'Clientes' })
         }
     }
 }

@@ -1,13 +1,12 @@
 export class Cliente {
-    nome?: string;
-    email?: string;
+    nome?: any;
+    email?: any;
     senha?: any;
-    rua?: string;
-    cidade?: string;
+    senha_hash?: any;
+    rua?: any;
+    cidade?: any;
     cep?: any;
-    estado?: string;
+    estado?: any;
     cpf?: any;
-
-
-
+    id_cliente?: any;
 }

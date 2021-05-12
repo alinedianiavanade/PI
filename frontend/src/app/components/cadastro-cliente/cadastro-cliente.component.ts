@@ -44,7 +44,6 @@ export class CadastroClienteComponent implements OnInit {
         response => {
           console.log(response)
           this.submitted = true;
-          //this.router.navigate(['/login']);
         },
         error => {
           console.log(error);

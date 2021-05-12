@@ -1,0 +1,70 @@
+<div class="sem-pedido" *ngIf="!pedidos">
+    <div class="container">
+        <img src="https://www.natuurenmilieu.nl/wp-content/uploads/2019/06/sad-face-in-rounded-square-300x300.png">
+        <h2>Que pena! Você não adicionou nenhum produto ao seu carrinho ainda. <br>
+            Volte às comprar para escolher os produtos que deseja comprar.</h2>
+        <button class="btn btn-primary bnt-lg mt-3" routerLink="/">Voltar às compras</button>
+    </div>
+</div>
+<div class="tem-pedidos" *ngIf="pedidos">
+    <div class="titulos">
+        <div class="seu-carrinho">
+            <h1>Seu Carrinho</h1><img
+                src="https://imagensemoldes.com.br/wp-content/uploads/2020/07/%C3%8Dcone-Carrinho-de-Compras-PNG.png"
+                width="30px" height="30px">
+        </div>
+        <div class="dados-pessoais">
+            <h1>Dados Pessoais</h1>
+        </div>
+    </div>
+    <div class="pedidos">
+        <div class="col-md-6">
+            <div class="tabela">
+                <table>
+                    <tr>
+                        <th>Imagem</th>
+                        <th>Nome</th>
+                        <th>Preço Unitário</th>
+                        <th>Quantidade</th>
+                        <th>Valor Prévio</th>
+                        <th> </th>
+                    </tr>
+                    <tr class="list-group" *ngFor="let pedido of pedidos; let i = index"
+                        [class.active]="i == currentIndex" (click)="setActivePedido(pedido,i)">
+                        <td><img class="foto" src="{{ pedido.imgurl_produto }}" width="60" height="70" alt=""></td>
+                        <td>{{pedido.nome_produto}}</td>
+                        <td>{{pedido.preco_produto}}</td>
+                        <td>
+                            <div class="quantidade">
+                                <input type="image" class="menos" width="15px" height="15px"
+                                    src="https://image.flaticon.com/icons/png/512/25/25232.png"
+                                    (click)="ativaEDiminui(pedido,i)">
+                                {{pedido.quantidade}}
+                                <input type="image" width="15px" height="15px" class="mais"
+                                    src="https://cdn.pixabay.com/photo/2014/04/02/10/55/plus-304947_960_720.png"
+                                    (click)="ativaEAumenta(pedido,i)">
+                            </div>
+                        </td>
+                        <td>{{pedido.soma_produtos}}</td>
+                        <td class="deleta"> <input type="image" class="apagar" width="25px" height="25px"
+                                src="https://th.bing.com/th/id/R45428b1119e78b96bb65fe73d435ba90?rik=KLd5zd6VRSKL7Q&pid=ImgRaw"
+                                (click)="ativaERemove(pedido,i)">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="direito">
+            <div class="info">
+                <app-cliente-dados></app-cliente-dados>
+            </div>
+            <div class="total">
+                <h3>Valor Total:</h3>
+                <h2 class="valor-compra">R$ {{total()}}</h2>
+            </div>
+            <div class="checkout">
+                <app-checkout></app-checkout>
+            </div>
+        </div>
+    </div>
+</div>

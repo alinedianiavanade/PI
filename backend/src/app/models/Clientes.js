@@ -4,6 +4,12 @@ import bcrypt from 'bcryptjs';
 class Cliente extends Model {
     static init(sequelize) {
         super.init({
+            id_cliente: {
+                type: Sequelize.INTEGER,
+                allowNull: false,
+                autoIncrement: true,
+                primaryKey: true,
+            },
             nome: Sequelize.STRING,
             email: Sequelize.STRING,
             senha: Sequelize.VIRTUAL,
