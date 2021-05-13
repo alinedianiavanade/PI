@@ -22,9 +22,10 @@
                                         class="nome-produto" data-abc="true">{{
                                         produto.nome }}</a> </h6>
                             </div>
-                            <h3 class="mb-0 font-weight-semibold">R$ {{ produto.preco }}</h3>
-                            <button type="button" class="btn bg-cart" routerLink="/produto-info/{{ produto.id_produto }}">
-                                Ver detalhes </button>    
+                            <h3 class="mb-0 font-weight-semibold"><strong>R$ {{ produto.preco }}</strong></h3>
+                            <button type="button" class="btn bg-cart"
+                                routerLink="/produto-info/{{ produto.id_produto }}">
+                                Ver detalhes </button>
                         </div>
                     </div>
                 </div>

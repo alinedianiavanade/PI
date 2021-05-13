@@ -36,6 +36,10 @@
 .nao-logado h2 {
     padding-top: 10px;
 }
+
+.nao-logado img {
+    width: 290px;
+}
 .tem-pedidos .titulos {
     padding-top: 10px;
     width: 100%;

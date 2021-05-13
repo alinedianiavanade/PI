@@ -51,6 +51,7 @@
    padding:15px;
    border-radius:3px;
    background-color: #fff;
+   max-width: 500px;
   }
   .qdt{
       padding: 10px;

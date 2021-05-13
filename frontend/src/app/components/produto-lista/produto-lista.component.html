@@ -1,13 +1,13 @@
 <main>
     <div class="busca">
         <div class="por-nome">
-           <input type="text" class="form-control" placeholder="Buscar por nome" [(ngModel)]="nome" />
+            <input type="text" class="form-control" placeholder="Buscar por nome" [(ngModel)]="nome" />
 
-        <button class="btn btn-outline-secondary" type="button" (click)="searchNome()">
-            Buscar
-        </button> 
+            <button class="btn btn-outline-secondary" type="button" (click)="searchNome()">
+                Buscar
+            </button>
         </div>
-        
+
     </div>
     <div class="container d-flex justify-content-center mt-50 mb-50">
         <div class="row">
@@ -25,9 +25,9 @@
                                     nome-produto" data-abc="true">{{
                                     produto.nome }}</a> </h6>
                         </div>
-                        <h3 class="mb-0 font-weight-semibold">R$ {{ produto.preco }}</h3>
+                        <h3 class="mb-0 font-weight-semibold"><strong>R$ {{ produto.preco }}</strong></h3>
                         <button type="button" class="btn bg-cart" routerLink="/produto-info/{{ produto.id_produto }}">
-                            Ver detalhes </button>    
+                            Ver detalhes </button>
                     </div>
                 </div>
             </div>

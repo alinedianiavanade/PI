@@ -66,6 +66,7 @@
     width: 50px;
     text-align: center;
     text-decoration: none;
+    border-radius: 20%;
   }
   
   .fa:hover {
