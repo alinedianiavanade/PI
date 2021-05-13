@@ -38,7 +38,7 @@ class CarrinhoController {
     };
     async update(request, response) {
 
-        const carrinho = await Carrinho.findOne({ where: { id_cliente: 1 } });
+        const carrinho = await Carrinho.findOne({ where: { id_cliente: request.clienteId } });
         if (!carrinho) {
             return response.status(404).json({ erroe: "Esse cliente ainda não possui um carrinho." })
         }
@@ -47,7 +47,7 @@ class CarrinhoController {
         return response.json(carrinhoFinal);
     }
     async delete(request, response) {
-        Carrinho.destroy({ where: { id_cliente: 1 } })
+        Carrinho.destroy({ where: { id_cliente: request.clienteId } })
             .then(num => {
                 if (num == 1) {
                     response.send({
