@@ -6,3 +6,13 @@ button:hover{
   background-color: #512DA8;
   color: #fff;
 }
+.enviado {
+  text-align: center;
+}
+.enviado h4 {
+  background-color: rgba(194, 238, 201, 0.904);
+}
+.enviado .botoes {
+  display: flex;
+  justify-content: space-evenly
+}

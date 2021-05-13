@@ -39,4 +39,7 @@ export class ProdutoService {
   findByName(nome: any): Observable<Produto[]> {
     return this.http.get<Produto[]>(`${baseUrl}/produto-nome?nome=${nome}`)
   }
+  findByCategory(id_categoria: any): Observable<Produto[]> {
+    return this.http.get<Produto[]>(`${baseUrl}/produtos-na-categoria/${id_categoria}`)
+  }
 }

@@ -27,7 +27,7 @@ export class PedidoCriarComponent implements OnInit {
     id_pedido: 1,
     quantidade_produto: 1,
   };
-  
+  enviado= false;
   currentCliente?: Cliente;
   message = '';
   currentToken: any;
@@ -71,6 +71,7 @@ export class PedidoCriarComponent implements OnInit {
     this.pedidosService.create(data)
     .subscribe(
       response => {
+        this.enviado = true;
         console.log(response)
       },
       error => {

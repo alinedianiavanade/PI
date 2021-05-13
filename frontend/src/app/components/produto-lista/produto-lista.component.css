@@ -27,8 +27,15 @@ div.card-body button:hover{
 
 .busca {
     display: flex;
-    width: 300px;
+    width: 600px;
     padding-left: 15px;
+    justify-content: space-between;
+}
+.busca .por-nome, .busca .por-categoria {
+    display: flex;
+}
+.btn-secondary{
+    height:fixed;
 }
 .nome-produto{
     font-size: 16px;

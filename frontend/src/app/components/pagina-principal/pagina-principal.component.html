@@ -23,14 +23,8 @@
                                         produto.nome }}</a> </h6>
                             </div>
                             <h3 class="mb-0 font-weight-semibold">R$ {{ produto.preco }}</h3>
-                            <div class="logado" *ngIf="currentCliente">
-                                <button type="button" class="btn bg-cart"  (click)="savePedido(produto.id_produto)" routerLink="/carrinho"><i class="fa fa-cart-plus mr-2"></i> Add to
-                                               cart</button>
-                               </div>
-                                     <div class="deslogado" *ngIf="!currentCliente">
-                                       <button type="button" class="btn bg-cart"  routerLink="/login"><i class="fa fa-cart-plus mr-2"></i> Add to
-                                           cart</button>
-                                     </div>
+                            <button type="button" class="btn bg-cart" routerLink="/produto-info/{{ produto.id_produto }}">
+                                Ver detalhes </button>    
                         </div>
                     </div>
                 </div>

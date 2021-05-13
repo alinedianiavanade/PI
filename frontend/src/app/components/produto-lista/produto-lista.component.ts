@@ -18,6 +18,7 @@ export class ProdutoListaComponent implements OnInit {
   currentProduto?: Produto;
   currentIndex = -1;
   nome = '';
+  id_categoria = 1;
   currentCliente?: Cliente;
   message = '';
   currentToken: any;
@@ -80,28 +81,4 @@ export class ProdutoListaComponent implements OnInit {
           console.log(error);
         });
   }
-
-  savePedido(idp:any): void {
-    const data = {
-      id_produto: idp, 
-      id_cliente: 1,
-      quantidade: 1,
-  soma_produtos: 1,
-  nome_produto: 'nome',
-  imgurl_produto: 'url',
-  preco_produto: 1.00,
-  quantidade_produto: 1,
-  status: false 
-    }
-    this.pedidosService.create(data)
-    .subscribe(
-      response => {
-        console.log(response)
-      },
-      error => {
-        console.log(error);
-      });
-  }
-
-
 }
