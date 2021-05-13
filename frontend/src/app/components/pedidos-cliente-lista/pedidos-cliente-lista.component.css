@@ -15,9 +15,26 @@
     color: #212121;
     border: 1px solid #673AB7;
 }
-.sem-pedido .container button:hover{
+.sem-pedido .container button:hover, .nao-logado button:hover {
     background-color: #512DA8;
     color: #fff;
+}
+.nao-logado button {
+    width: 70%;
+    background-color: #FFEB3B;
+    color: #212121;
+    border: 1px solid #673AB7;
+}
+.nao-logado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 320px;
+    padding: 30px
+}
+.nao-logado h2 {
+    padding-top: 10px;
 }
 .tem-pedidos .titulos {
     padding-top: 10px;

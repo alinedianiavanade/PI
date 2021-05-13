@@ -1,3 +1,5 @@
+
+<div class="logado" *ngIf="currentCliente">
 <div class="sem-pedido" *ngIf="!pedidos">
     <div class="container">
         <img src="https://www.natuurenmilieu.nl/wp-content/uploads/2019/06/sad-face-in-rounded-square-300x300.png">
@@ -67,4 +69,10 @@
             </div>
         </div>
     </div>
+</div>
+</div>
+<div class="nao-logado" *ngIf="!currentCliente">
+    <img src="https://www.natuurenmilieu.nl/wp-content/uploads/2019/06/sad-face-in-rounded-square-300x300.png">
+    <h2>Você deve estar logado para acessar essa página</h2>
+    <button class="btn btn-primary bnt-lg mt-3" routerLink="/login">Logar</button>
 </div>

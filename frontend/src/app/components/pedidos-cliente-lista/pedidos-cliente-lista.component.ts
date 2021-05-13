@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Pedido } from '../../models/pedidos.model';
 import { PedidoService } from '../../services/pedidos.service';
+import { TokenStorageService } from '../../_services/token-storage.service';
+import { ClienteService } from '../../services/cliente.service';
+import { Cliente } from '../../models/cliente.model';
+import jwt_decode from 'jwt-decode';
+
 
 @Component({
   selector: 'app-pedidos-cliente-lista',
@@ -17,12 +22,35 @@ export class PedidosClienteListaComponent implements OnInit {
   soma_produtos = '';
   preco_produto = '';
   quantidade_produto = '';
-  constructor(public pedidoService: PedidoService) { }
+  currentCliente?: Cliente;
+  message = '';
+  currentToken: any;
+  atualizado = false;
+  decoded: any;
+
+  constructor(public pedidoService: PedidoService,
+    private token: TokenStorageService,private clienteService: ClienteService) { }
 
   ngOnInit(): void {
     this.retrievePedidos();
+    this.currentToken = this.token.getCliente();
+    var tokenDec = this.currentToken.token
+    this.decoded = jwt_decode(tokenDec);
+    this.atualizado = false;
+    this.message = '';
+    this.getClienteAtual();
   }
-
+  getClienteAtual(): void {
+    this.clienteService.get()
+      .subscribe(
+        data => {
+          this.currentCliente = data;
+          console.log(data);
+        },
+        error => {
+          console.log(error);
+        });
+  }
   retrievePedidos(): void {
     this.pedidoService.getByCliente()
       .subscribe(
