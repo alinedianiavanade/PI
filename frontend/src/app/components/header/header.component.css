@@ -25,6 +25,7 @@ header img{
 
 header nav ul {
     list-style: none;
+    padding-inline-start: 5px;
 }
 
 header nav ul li {
@@ -43,4 +44,41 @@ header nav ul li a {
 
 header nav ul li a:hover{
     color: #d9ff00;
+}
+
+@media (max-width: 741px){
+    header img{
+        height: 75px;
+        padding-top: 6px;
+        padding-left: 15px;
+    }
+}
+
+@media (max-width: 700px){
+    header img{
+        height: 65px;
+        padding-top: 6px;
+        padding-left: 15px;
+    }
+    header .container2 {
+        flex-direction: column;
+    }
+    nav {
+        height: 10px;
+    }
+    header nav ul{
+        padding: 0;
+        margin: 0;
+    }
+    header nav ul li {
+        padding-right: 7px;
+        padding-top: 0px;
+    }
+}
+
+@media (max-width: 500px){
+    header nav ul li {
+        padding: 0px;
+        padding-right: 12px;
+    }
 }

@@ -1,0 +1,11 @@
+.pag{
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+}
+.carrinho {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 70px;
+}

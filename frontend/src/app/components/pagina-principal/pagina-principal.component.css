@@ -1,0 +1,152 @@
+.box-content{
+    padding: 130px;
+}
+
+main{
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+div.card-body button {
+    background-color: #FFEB3B;
+    color: #212121;
+    border: 1px solid #673AB7;
+}
+div.card-body button:hover{
+    background-color: #512DA8;
+    color: #fff;
+}
+.banner{
+    margin: 0;
+    padding: 0;
+}
+
+.main-content{
+    margin: 0 40px;
+    margin-top: 30px;
+}
+
+.title p{
+    font-size: 26px;
+    text-align: center;
+}
+
+.container{
+    width: 100%;
+}
+
+.mt-2{
+    padding-bottom: 30px;
+}
+.nome-produto{
+    font-size: 16px;
+}
+
+.mt-50 {
+    margin-top: 35px
+}
+
+.mb-50 {
+    margin-bottom: 50px
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .1875rem
+}
+
+.card-img-actions img{
+    width: 99%;
+}
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    text-align: center
+}
+
+.card-img {
+    width: 350px
+}
+
+.bg-cart {
+    background-color: orange;
+    color: #fff
+}
+
+.bg-cart:hover {
+    color: #fff
+}
+
+.bg-buy {
+    background-color: green;
+    color: #fff;
+    padding-right: 29px
+}
+
+.bg-buy:hover {
+    color: #fff
+}
+
+a {
+    text-decoration: none !important
+}
+
+.newsletter{
+    background-color: #ececec;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.newsletter-banner{
+    margin: 10px 0;
+    margin-left: 10px;
+}
+
+.newsletter .newsletter-content{
+    padding: 20px 30px;
+    text-align: justify;
+    width: 100%;
+}
+
+.newsletter .newsletter-content h2{
+    font-size: 28px;
+}
+.newsletter .newsletter-content p{
+    font-size: 16px;
+}
+
+.newsletter i{
+    font-size: 30px;
+    padding-right: 20px;
+}
+
+@media (max-width: 991px){
+    .card-img-actions img{
+        height: 60vw;
+    }
+    .newsletter{
+        flex-direction: column;
+    }
+    .newsletter .newsletter-content{
+        text-align: center;
+    }
+}
+
+@media (max-width:665px){
+    .newsletter-banner{
+        margin-left: 30px;
+    }
+    .newsletter-banner img{
+        width: 90%;
+    }
+}

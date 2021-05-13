@@ -15,7 +15,10 @@ class App {
 
     middleware() {
         var corsOptions = {
-            origin: "http://localhost:8081"
+            AccessControlAllowOrigin: '*',
+            AccessControlAllowCredentials: true,
+            AccessControlAllowMethods: ['GET', 'POST', 'PUT', 'DELETE'],
+            AccessControlAllowHeaders: '*'
         };
         this.server.use(cors(corsOptions));
         this.server.use(express.json());

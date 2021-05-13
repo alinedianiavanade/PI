@@ -1,0 +1,53 @@
+<div class="container" *ngIf="currentCliente">
+    <div class="cliente-edit">
+        <div *ngIf="decoded.id_cliente" class="edit-form">
+            <h3>
+                Olá, <strong>{{ currentCliente.nome }}</strong>
+            </h3>
+            <h3>
+                Seus Dados:
+            </h3>
+            <form>
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" class="form-control" id="nome" [(ngModel)]="currentCliente.nome" name="nome" />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" id="email" [(ngModel)]="currentCliente.email"
+                        name="email" />
+                </div>
+                <div class="form-group">
+                    <label for="rua">Endereço</label>
+                    <input type="text" class="form-control" id="rua" [(ngModel)]="currentCliente.rua" name="rua" />
+                </div>
+                <div class="form-group">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" class="form-control" id="cidade" [(ngModel)]="currentCliente.cidade"
+                        name="cidade" />
+                </div>
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <input type="text" class="form-control" id="estado" [(ngModel)]="currentCliente.estado"
+                        name="estado" />
+                </div>
+                <div class="form-group">
+                    <label for="cep">CEP</label>
+                    <input type="text" class="form-control" id="cpf" [(ngModel)]="currentCliente.cep" name="cep" />
+                </div>
+            </form>
+            <button type="submit" class="badge badge-success mb-2" (click)="updateCliente()">Atualizar</button>
+            <div *ngIf="!atualizado">
+                <br />
+                <p>Caso necessário, atualize um campo e clique no botão acima.</p>
+            </div>
+            <div *ngIf="atualizado">
+                <br />
+                <p>{{ message }}</p>
+
+                <a routerLink="../produtos"><button class="badge badge-success mb-2">Voltar a comprar</button></a>
+            </div>
+
+        </div>
+    </div>
+</div>

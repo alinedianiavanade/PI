@@ -39,20 +39,21 @@ routes.post('/session', SessionController.store);
 
 routes.use(authMiddleware);
 
-routes.put('/clientes', ClientesController.update);
+routes.put('/cliente', ClientesController.update);
 routes.delete('/clientes', ClientesController.delete);
 routes.get('/cliente', ClientesController.showClienteId);
 
-routes.get('/carrinho-cliente', CarrinhoController.showCarrinhoIdCliente);
+routes.get('/carrinho-cliente/:id_cliente', CarrinhoController.showCarrinhoIdCliente);
 routes.delete('/carrinho', CarrinhoController.delete);
 routes.put('/carrinho', CarrinhoController.update);
 routes.post('/carrinho', CarrinhoController.store);
 
 routes.get('/pedidos-cliente', PedidoController.showPedidoCliente);
-routes.put('/pedidos/:id', PedidoController.update);
-routes.get('/busca-pedidos/:id', PedidoController.showPedidoId);
-routes.delete('/pedidos/:id', PedidoController.delete);
+routes.put('/pedidos/:id_pedido', PedidoController.update);
+routes.get('/busca-pedidos/:id_pedido', PedidoController.showPedidoId);
+routes.delete('/pedidos/:id_pedido', PedidoController.delete);
 routes.post('/pedidos', PedidoController.store);
+routes.delete('/pedidos-cliente', PedidoController.deleteByCliente);
 
 routes.post('/historico', HistoricoController.store);
 routes.get('/historico', HistoricoController.showHistoricoCliente);

@@ -70,7 +70,7 @@ class ProdutoController {
             return response.status(401).json({ error: 'Produto não encontrado.' })
         }
 
-        Produto.destroy({ where: { id: id } });
+        Produto.destroy({ where: { id_produto: id } });
         if (data => data) {
             return response.json({ message: `Produto de id ${id} foi deletado com sucesso.` })
         }

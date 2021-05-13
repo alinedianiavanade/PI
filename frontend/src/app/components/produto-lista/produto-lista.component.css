@@ -8,6 +8,15 @@ main{
     margin-right: 45px;
 }
 
+div.card-body button {
+    background-color: #FFEB3B;
+    color: #212121;
+    border: 1px solid #673AB7;
+}
+div.card-body button:hover{
+    background-color: #512DA8;
+    color: #fff;
+}
 .container{
     width: 100%;
 }
@@ -59,7 +68,7 @@ main{
 }
 
 .card-img {
-    width: 350px
+    width: 95%
 }
 
 .star {
@@ -88,3 +97,5 @@ main{
 a {
     text-decoration: none !important
 }
+
+
