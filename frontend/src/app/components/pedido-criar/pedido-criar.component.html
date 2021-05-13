@@ -1,9 +1,8 @@
-
-        
-            <button type="button" class="btn bg-cart"  (click)="savePedido()" routerLink="/carrinho"><i class="fa fa-cart-plus mr-2"></i> Add to
+<div class="logado" *ngIf="currentCliente">
+ <button type="button" class="btn bg-cart"  (click)="savePedido()" routerLink="/carrinho"><i class="fa fa-cart-plus mr-2"></i> Add to
                 cart</button>
-                  
-            
-        
-          
-        
+</div>
+      <div class="deslogado" *ngIf="!currentCliente">
+        <button type="button" class="btn bg-cart"  routerLink="/login"><i class="fa fa-cart-plus mr-2"></i> Add to
+            cart</button>
+      </div>

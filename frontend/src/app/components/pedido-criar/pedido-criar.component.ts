@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {Pedido} from '../../models/pedidos.model';
 import {PedidoService} from '../../services/pedidos.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TokenStorageService } from '../../_services/token-storage.service';
+import { ClienteService } from '../../services/cliente.service';
+import { Cliente } from '../../models/cliente.model';
+import jwt_decode from 'jwt-decode';
+
 
 @Component({
   selector: 'app-pedido-criar',
@@ -21,11 +26,35 @@ export class PedidoCriarComponent implements OnInit {
     imgurl_produto: '',
     id_pedido: 1,
     quantidade_produto: 1,
-  }
+  };
+  
+  currentCliente?: Cliente;
+  message = '';
+  currentToken: any;
+  atualizado = false;
+  decoded: any;
 
-  constructor(public pedidosService:PedidoService, public route: ActivatedRoute) { }
+  constructor(public pedidosService:PedidoService, public route: ActivatedRoute,
+    private token: TokenStorageService,private clienteService: ClienteService) { }
 
   ngOnInit(): void {
+    this.currentToken = this.token.getCliente();
+    var tokenDec = this.currentToken.token
+    this.decoded = jwt_decode(tokenDec);
+    this.atualizado = false;
+    this.message = '';
+    this.getClienteAtual();
+  }
+  getClienteAtual(): void {
+    this.clienteService.get()
+      .subscribe(
+        data => {
+          this.currentCliente = data;
+          console.log(data);
+        },
+        error => {
+          console.log(error);
+        });
   }
   savePedido(): void {
     const data = {
