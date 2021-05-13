@@ -11,8 +11,13 @@
     padding: 20px
 }
 .sem-pedido .container button {
-    color: #212121;
     background-color: #FFEB3B;
+    color: #212121;
+    border: 1px solid #673AB7;
+}
+.sem-pedido .container button:hover{
+    background-color: #512DA8;
+    color: #fff;
 }
 .tem-pedidos .titulos {
     padding-top: 10px;

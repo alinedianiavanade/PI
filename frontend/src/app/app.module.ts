@@ -24,6 +24,7 @@ import { ClienteDadosComponent } from './components/cliente-dados/cliente-dados.
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { CheckoutConfirmaComponent } from './components/checkout-confirma/checkout-confirma.component';
 import { CarrinhoComponent } from './components/carrinho/carrinho.component';
+import { PedidoCriarComponent } from './components/pedido-criar/pedido-criar.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { CarrinhoComponent } from './components/carrinho/carrinho.component';
     CheckoutComponent,
     CheckoutConfirmaComponent,
     CarrinhoComponent,
+    PedidoCriarComponent,
   ],
   imports: [
     BrowserModule,

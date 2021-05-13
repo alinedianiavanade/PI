@@ -6,7 +6,15 @@ main{
     padding-top: 90px;
     padding-bottom: 90px;
 }
-
+div.card-body button {
+    background-color: #FFEB3B;
+    color: #212121;
+    border: 1px solid #673AB7;
+}
+div.card-body button:hover{
+    background-color: #512DA8;
+    color: #fff;
+}
 .banner{
     margin: 0;
     padding: 0;

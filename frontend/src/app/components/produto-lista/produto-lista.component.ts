@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Produto } from '../../models/produto.model';
 import { ProdutoService } from '../../services/produto.service';
+import {PedidoService } from '../../services/pedidos.service';
 
 @Component({
   selector: 'app-produto-lista',
@@ -14,7 +15,7 @@ export class ProdutoListaComponent implements OnInit {
   currentIndex = -1;
   nome = '';
 
-  constructor(private produtoService: ProdutoService) { }
+  constructor(private produtoService: ProdutoService, public pedidosService: PedidoService) { }
 
   ngOnInit(): void {
     this.retrieveProdutos();
@@ -52,5 +53,28 @@ export class ProdutoListaComponent implements OnInit {
           console.log(error);
         });
   }
+
+  savePedido(idp:any): void {
+    const data = {
+      id_produto: idp, 
+      id_cliente: 1,
+      quantidade: 1,
+  soma_produtos: 1,
+  nome_produto: 'nome',
+  imgurl_produto: 'url',
+  preco_produto: 1.00,
+  quantidade_produto: 1,
+  status: false 
+    }
+    this.pedidosService.create(data)
+    .subscribe(
+      response => {
+        console.log(response)
+      },
+      error => {
+        console.log(error);
+      });
+  }
+
 
 }

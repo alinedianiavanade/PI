@@ -23,7 +23,7 @@
                                     produto.nome }}</a> </h6>
                         </div>
                         <h3 class="mb-0 font-weight-semibold">R$ {{ produto.preco }}</h3>
-                        <button type="button" class="btn bg-cart"><i class="fa fa-cart-plus mr-2"></i> Adicionar ao
+                        <button type="button" class="btn bg-cart" (click)="savePedido(produto.id_produto)"><i class="fa fa-cart-plus mr-2"></i> Adicionar ao
                             Carrinho</button>
                     </div>
                 </div>
